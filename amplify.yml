@@ -1,0 +1,18 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - 'yarn install --frozen-lockfile'
+    build:
+      commands:
+        - 'env | grep -e GOOGLE_SHEETS_ID -e GOOGLE_SHEETS_TAB_JOBS -e GOOGLE_SHEETS_TAB_POPUP -e GOOGLE_DRIVE_UPLOADS_FOLDER_ID -e EMAIL_USER -e EMAIL_PASS -e HEALTHSHERPA_API_KEY -e HEALTHSHERPA_LEADS_SHEET_ID >> .env.production'
+        - 'npm run build'
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - '.next/cache/**/*'
+      - 'node_modules/**/*'

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 160" role="img" aria-labelledby="title desc">
+  <title id="title">EveryHealth</title>
+  <desc id="desc">EveryHealth logo with a connected care symbol</desc>
+  <defs>
+    <style>
+      .green { fill: #75c900; }
+      .blue { fill: #1daee9; }
+      .pink { fill: #d83c9d; }
+      .orange { fill: #f47b20; }
+      .text-green { fill: #68bd00; font-family: Montserrat, Arial, sans-serif; font-size: 62px; font-weight: 800; }
+      .text-blue { fill: #23aeea; font-family: Montserrat, Arial, sans-serif; font-size: 62px; font-weight: 800; }
+    </style>
+  </defs>
+  <g transform="translate(18 20)">
+    <circle cx="62" cy="62" r="12" class="green"/>
+    <circle cx="98" cy="48" r="11" class="blue"/>
+    <circle cx="92" cy="88" r="11" class="pink"/>
+    <circle cx="46" cy="92" r="11" class="orange"/>
+    <circle cx="34" cy="50" r="10" class="blue"/>
+    <circle cx="68" cy="26" r="9" class="green"/>
+    <path d="M62 62 98 48M62 62 92 88M62 62 46 92M62 62 34 50M62 62 68 26M34 50 68 26M68 26 98 48M98 48 92 88M92 88 46 92M46 92 34 50" fill="none" stroke="#6fc8d8" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+    <circle cx="62" cy="62" r="16" fill="#fff"/>
+    <circle cx="62" cy="62" r="10" class="green"/>
+  </g>
+  <text x="145" y="98" class="text-green">Every</text>
+  <text x="316" y="98" class="text-blue">Health</text>
+</svg>

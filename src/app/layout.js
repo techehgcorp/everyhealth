@@ -144,6 +144,7 @@ export default function RootLayout({ children }) {
         <Script src="/assets/vendor/purecounter/purecounter_vanilla.js" strategy="lazyOnload" />
         <Script src="/assets/vendor/swiper/swiper-bundle.min.js" strategy="lazyOnload" />
         <Script src="/assets/js/main.js" strategy="lazyOnload" />
+        {/* Chat assistant (LeadConnector) disabled — uncomment to restore.
         <Script
         src="https://widgets.leadconnectorhq.com/loader.js"
         data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
@@ -151,6 +152,7 @@ export default function RootLayout({ children }) {
         data-source="WEB_USER"
         strategy="afterInteractive"
         />
+        */}
       </body>
     </html>
   );

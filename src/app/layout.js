@@ -4,7 +4,9 @@ import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import QuoteModal from "@/components/QuoteModal";
 import RouteScriptRefresh from "@/components/RouteScriptRefresh";
-import TopBar from "@/components/TopBar";
+// TopBar is disabled: email and phone now sit in the hero. Restore both
+// lines to bring it back.
+// import TopBar from "@/components/TopBar";
 import { writableStates } from "@/data/states";
 import { brand } from "@/lib/brand";
 
@@ -119,7 +121,7 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning>
         <header id="header" className="header fixed-top">
-          <TopBar />
+          {/* <TopBar /> */}
           <NavBar />
         </header>
         {children}

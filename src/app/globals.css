@@ -2620,3 +2620,447 @@ main:not(:has(#hero)):not(:has(.eh-page-header)):not(:has(.page-title)) > sectio
 }
 
 
+
+
+/* ═══════════════════════════════════════════════════════════
+   HERO — "clinic" variant (src/components/HeroSection.jsx)
+   Light textured wall, centred copy, glass U-channel with two
+   spheres rolling in. The previous video hero is kept as
+   HeroSection2.jsx and still uses the rules above.
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-clinic {
+  /* Width the stage SVG is drawn at. Everything in the scene scales
+     off this, including the floor spacer that protects the copy. */
+  --stage-w: 100vw;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;               /* main.css pads every <section> 60px */
+  overflow: hidden;
+  background: #E7EAEC;
+  color: #4A5563;
+}
+@supports (min-height: 100svh) {
+  .hero-clinic { min-height: 100svh; }
+}
+
+/* Background footage (letterbox bars already cropped out of the file;
+   the uncut source is everyhealth_original.mp4). */
+.hero-clinic__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Wash over the footage: strongest behind the copy, lighter at the
+   edges and bottom so the family still reads. */
+.hero-clinic__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 40% 46% at 50% 42%,
+      rgba(242,244,245,.86) 0%,
+      rgba(242,244,245,.7) 55%,
+      rgba(242,244,245,0) 100%),
+    linear-gradient(rgba(236,238,240,.42), rgba(236,238,240,.42));
+}
+
+/* The camera. Wall, light and the stage SVG live in one layer that the
+   intro script scales from 1 up to ZOOM_TO (HeroSection.jsx). It pivots
+   on the bottom of the spheres at rest: 32 of the viewBox's 728 units
+   above the bottom edge, i.e. stage-w × 32/1440. */
+.hero-clinic__scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform-origin: 50% calc(100% - var(--stage-w) * .0222);
+}
+
+/* Concrete: fine grain + sparse pits, both from SVG turbulence. */
+.hero-clinic__wall {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='.11' numOctaves='1' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .32  0 0 0 0 .34  0 0 0 0 .37  14 0 0 0 -10.4'/></filter><rect width='100%' height='100%' filter='url(%23p)'/></svg>"),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .3  0 0 0 0 .32  0 0 0 0 .35  0 0 0 .42 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    radial-gradient(ellipse 70% 60% at 50% 35%, rgba(244,245,244,.35) 0%, rgba(244,245,244,0) 70%);
+  opacity: .75;
+}
+
+/* Sunlight through a window: soft diagonal warm band between two
+   shadow bands, drifting very slowly. */
+.hero-clinic__light {
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(118deg,
+      rgba(40,48,58,.14) 0%,
+      rgba(40,48,58,0) 22%,
+      rgba(255,248,236,.55) 38%,
+      rgba(255,248,236,0) 52%,
+      rgba(40,48,58,0) 60%,
+      rgba(40,48,58,.12) 78%,
+      rgba(40,48,58,0) 100%);
+  filter: blur(18px);
+  animation: heroClinicLight 22s ease-in-out infinite alternate;
+}
+@keyframes heroClinicLight {
+  from { transform: translate3d(-3%, 0, 0); }
+  to   { transform: translate3d(3%, -1.5%, 0); }
+}
+
+/* Stage: drawn at --stage-w, anchored to the bottom centre. The track
+   arms run past the viewBox sides, so let them overflow. */
+.hero-clinic__stage {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 1;
+  width: var(--stage-w);
+  height: calc(var(--stage-w) * .5056);
+  transform: translateX(-50%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Hidden until the script has put the camera and spheres at their
+   start positions; the delayed fallback shows the rest pose if JS
+   never runs. */
+.hero-clinic__rig {
+  opacity: 0;
+  transition: opacity .5s ease;
+  animation: heroClinicShow 0s 2.5s forwards;
+}
+.hero-clinic__rig.is-ready { opacity: 1; }
+@keyframes heroClinicShow { to { opacity: 1; } }
+
+.hero-clinic__glow {
+  animation: heroClinicPulse 4.5s ease-in-out infinite;
+}
+@keyframes heroClinicPulse {
+  0%, 100% { opacity: .85; }
+  50%      { opacity: 1; }
+}
+
+
+/* ── Copy ── */
+.hero-clinic__inner {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-clinic__copy {
+  max-width: 54rem;
+  margin: 0 auto;
+  padding-top: clamp(96px, 13vh, 136px);
+  text-align: center;
+}
+
+.hero-clinic__floor {
+  flex: none;
+  /* After the zoom, sphere tops sit 32 + 2 × 56 × 1.6 ≈ 211 viewBox
+     units above the bottom (0.1466 of the stage width), plus air. */
+  height: calc(var(--stage-w) * .1466 + 10px);
+}
+
+.hero-clinic__eyebrow {
+  display: inline-flex;
+  margin: 0 0 1rem;
+  padding: .42rem .95rem;
+  border: 1px solid rgba(26,58,107,.14);
+  border-radius: 999px;
+  background: rgba(255,255,255,.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--dark);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.hero-clinic h1 {
+  margin: 0 auto 1rem;
+  max-width: 17ch;
+  color: #0F1F3A;
+  text-wrap: balance;
+  font-size: clamp(2.1rem, min(5vw, 7vh), 3.9rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.03em;
+}
+
+.hero-clinic__highlight {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-clinic__description {
+  max-width: 38rem;
+  margin: 0 auto 1.25rem;
+  color: #4A5563;
+  font-size: clamp(.95rem, 1.3vw, 1.08rem);
+  line-height: 1.6;
+}
+
+.hero-clinic__trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem 1.25rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.hero-clinic__trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: #1E293B;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.hero-clinic__trust i { color: var(--accent-dark); font-size: 1.05rem; }
+
+.hero-clinic__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: .7rem;
+}
+.hero-clinic__actions .btn {
+  padding: .8rem 1.6rem;
+  font-size: 1rem;
+  line-height: 1.2;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+/* ZIP capture was styled for the dark hero — retint for the light wall. */
+.hero-clinic__actions form { justify-content: center; max-width: 21rem; }
+.hero-clinic__actions form input {
+  border-color: rgba(15,31,58,.18);
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(15,31,58,.06);
+}
+.hero-clinic__actions form input:focus-visible { outline-color: var(--primary-dark); }
+.hero-clinic__actions form p { color: #5B6573; text-align: center; }
+.hero-clinic__actions form p[role="alert"] { color: #B42318; }
+
+.hero-clinic__periods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .45rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hero-clinic__period {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .32rem .75rem;
+  border: 1px solid rgba(15,31,58,.1);
+  border-radius: 999px;
+  background: rgba(255,255,255,.62);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #334155;
+  font-size: .78rem;
+  white-space: nowrap;
+}
+.hero-clinic__period strong { color: #0F1F3A; font-weight: 700; }
+.hero-clinic__dot { width: 7px; height: 7px; border-radius: 50%; background: #94A3B8; }
+.hero-clinic__period.is-open .hero-clinic__dot { background: #28c76f; animation: heroPulse 2.2s infinite; }
+.hero-clinic__period.is-upcoming .hero-clinic__dot { background: #ffb020; }
+.hero-clinic__period.is-closed { opacity: .5; }
+
+.hero-clinic__contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .4rem 1.4rem;
+  margin: .85rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: .85rem;
+}
+.hero-clinic__contact li { display: inline-flex; align-items: center; gap: .4rem; }
+.hero-clinic__contact i { color: var(--primary-dark); }
+.hero-clinic__contact a { color: #1E293B; font-weight: 600; }
+.hero-clinic__contact a:hover { color: var(--accent-dark); }
+
+/* Short laptop screens (13"): tighten the copy so the spheres stay in
+   view without scrolling. */
+@media (min-width: 992px) and (max-height: 860px) {
+  .hero-clinic__eyebrow { margin-bottom: .7rem; }
+  .hero-clinic h1 { margin-bottom: .7rem; }
+  .hero-clinic__description { font-size: .95rem; margin-bottom: .9rem; max-width: 42rem; }
+  .hero-clinic__trust { margin-bottom: 1rem; }
+  .hero-clinic__actions .btn { padding: .7rem 1.4rem; }
+  .hero-clinic__periods { margin-top: .8rem; }
+  .hero-clinic__contact { margin-top: .6rem; }
+  /* The ZIP hint is the least important line — drop it to keep the
+     spheres on screen. */
+  .hero-clinic__actions form p:not([role="alert"]) { display: none; }
+}
+
+/* The navbar goes white on the home page for the dark video hero.
+   Over the light wall it has to stay dark until scroll. */
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>a,
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>a:focus,
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>.nav-trigger,
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>.nav-trigger:focus,
+body:has(.hero-clinic) .header .hero-page .logo .sitename,
+body:has(.hero-clinic) .header .hero-page .mobile-nav-toggle {
+  color: var(--nav-color);
+}
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>a:hover,
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>.active,
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>.nav-trigger:hover,
+body:has(.hero-clinic) .header .hero-page .navmenu>ul>li>.nav-trigger.active {
+  color: var(--nav-hover-color);
+}
+body:has(.hero-clinic) .header .hero-page .navmenu a.appointment-nav-button,
+body:has(.hero-clinic) .header .hero-page .navmenu a.quote-nav-button {
+  color: var(--contrast-color);
+}
+
+/* ── Responsive ──
+   Narrower screens draw the stage wider than the viewport, so only the
+   bottom of the U shows and the spheres stay a usable size. */
+@media (max-width: 991.98px) {
+  .hero-clinic { --stage-w: 150vw; }
+  /* Copy spans the full width here, so the wash has to as well. */
+  .hero-clinic__veil {
+    background: linear-gradient(to bottom,
+      rgba(242,244,245,.8) 0%,
+      rgba(242,244,245,.74) 70%,
+      rgba(242,244,245,.45) 100%);
+  }
+  .hero-clinic__copy { padding-top: 104px; }
+}
+@media (max-width: 575.98px) {
+  .hero-clinic { --stage-w: 230vw; }
+  .hero-clinic__copy { padding-top: 96px; }
+  .hero-clinic__trust { flex-direction: column; align-items: center; gap: .35rem; }
+  .hero-clinic__actions .btn { flex: 1 1 auto; }
+  .hero-clinic__actions form { max-width: none; width: 100%; }
+  .hero-clinic__period { font-size: .72rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-clinic__light,
+  .hero-clinic__glow { animation: none; }
+  .hero-clinic__rig { animation: none; opacity: 1; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR — flat variant (src/components/NavBar.jsx)
+   Logo left, links centred, CTAs right. No frosted panel:
+   transparent at the top, solid white once scrolled. The glass
+   version is kept as NavBar2.jsx and uses the main.css rules.
+   ═══════════════════════════════════════════════════════════ */
+
+.header .branding.branding--clean {
+  margin: 0;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  transition: background .3s ease, box-shadow .3s ease, padding .3s ease;
+}
+.scrolled .header .branding.branding--clean {
+  padding: 4px 0;
+  background: #fff;
+  border: 0;
+  box-shadow: 0 1px 0 rgba(15,31,58,.08), 0 8px 24px rgba(15,31,58,.06);
+}
+
+.branding--clean .branding__grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header .branding--clean .logo img {
+  height: 54px;
+  max-height: 54px;
+}
+.scrolled .header .branding--clean .logo img {
+  height: 46px;
+  max-height: 46px;
+}
+
+.branding__actions {
+  justify-self: end;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.branding__link {
+  color: #1E293B;
+  font-family: var(--nav-font);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .2s;
+}
+.branding__link:hover,
+.branding__link.active { color: var(--nav-hover-color); }
+
+.branding__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: .6rem 1.25rem;
+  border-radius: 999px;
+  background: #0F1F3A;
+  color: #fff;
+  font-family: var(--nav-font);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(15,31,58,.18);
+  transition: background .2s, transform .2s;
+}
+.branding__cta:hover { background: var(--primary-dark); color: #fff; transform: translateY(-1px); }
+
+@media (min-width: 1200px) {
+  .branding--clean .branding__grid { grid-template-columns: 1fr auto 1fr; }
+  .branding--clean .navmenu { justify-self: center; }
+  .branding--clean .navmenu > ul > li { padding: 15px 18px; }
+  .branding--clean .navmenu > ul > li:last-child { padding-right: 18px; }
+  .header .branding--clean .navmenu > ul > li > .nav-trigger { color: #1E293B; }
+  .header .branding--clean .navmenu > ul > li > .nav-trigger:hover,
+  .header .branding--clean .navmenu > ul > li > .nav-trigger.active { color: var(--nav-hover-color); }
+}
+
+@media (max-width: 1199.98px) {
+  .branding--clean .navmenu { justify-self: end; }
+  .header .branding--clean .mobile-nav-toggle { color: #1E293B; }
+}

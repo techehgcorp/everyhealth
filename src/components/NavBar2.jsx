@@ -85,7 +85,7 @@ function inSection(pathname, prefixes) {
   );
 }
 
-export default function NavBar() {
+export default function NavBar2() {
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(null);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -193,13 +193,14 @@ export default function NavBar() {
   );
 
   return (
-    // Flat bar: logo left, page links centred, CTAs right. No frosted
-    // panel — transparent over the hero, solid white once scrolled.
-    // The previous glass version is kept as NavBar2.jsx.
-    <div className="branding branding--clean">
+    <div
+      className={`branding d-flex align-items-center${
+        pathname === "/" ? " hero-page" : ""
+      }`}
+    >
       {/* position-relative removed: the mega panels position against
           .branding so they can span the full header width. */}
-      <div className="container branding__grid">
+      <div className="container d-flex align-items-center justify-content-between">
         <Link
           href="/"
           className="logo d-flex align-items-center"
@@ -363,9 +364,8 @@ export default function NavBar() {
               </ul>
             </li>
 
-            {/* ── CTAs — inside the mobile panel only; desktop shows
-                 them in .branding__actions on the right ── */}
-            <li className="appointment-nav-item d-xl-none">
+            {/* ── CTAs — both permanent now that there's room ── */}
+            <li className="appointment-nav-item">
               <Link
                 href="/appointment"
                 className={`appointment-nav-button${
@@ -377,7 +377,7 @@ export default function NavBar() {
               </Link>
             </li>
 
-            <li className="quote-nav-item is-visible d-xl-none">
+            <li className="quote-nav-item is-visible">
               <a
                 href="#quote"
                 className="quote-nav-button"
@@ -402,20 +402,6 @@ export default function NavBar() {
             onClick={() => setIsMobileNavOpen((current) => !current)}
           />
         </nav>
-
-        <div className="branding__actions d-none d-xl-flex">
-          <Link
-            href="/appointment"
-            className={`branding__link${
-              isActive(pathname, "/appointment") ? " active" : ""
-            }`}
-          >
-            Appointment
-          </Link>
-          <a href="#quote" className="branding__cta" data-quote-modal-trigger>
-            Get a Quote
-          </a>
-        </div>
       </div>
     </div>
   );

@@ -10,61 +10,61 @@ const PAGE_URL = `${SITE_URL}/guides/how-much-life-insurance`;
 // round coverage amounts only, clearly labelled as illustrative.
 
 export const metadata = {
-  title: "How Much Life Insurance Do You Actually Need?",
+  title: "Figuring Out How Much Life Insurance You Need",
   description:
-    "A practical way to size a life insurance benefit: what to add up, what to subtract, how long the coverage needs to last, and why multiples of salary get it wrong.",
+    "A step-by-step way to choose your life insurance amount: what to count, what to take away, how many years coverage should last, and why salary multiples miss the mark.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: `How Much Life Insurance Do You Actually Need? | ${brand.name}`,
+    title: `Figuring Out How Much Life Insurance You Need | ${brand.name}`,
     description:
-      "What to add up, what to subtract, and how long the coverage needs to last.",
+      "What to count, what to take away, and how many years your coverage should last.",
     url: PAGE_URL,
     type: "article",
   },
 };
 
 const worked = {
-  columns: ["Line", "Illustrative amount", "Why it is there"],
+  columns: ["Item", "Example amount", "Why it is included"],
   rows: [
     [
-      "Remaining mortgage",
-      "$240,000",
-      "Clears the housing cost so the family is not forced to move.",
+      "Mortgage still owed",
+      "$210,000",
+      "Pays off the house so the family can stay in it.",
     ],
     [
       "Other debts",
-      "$25,000",
-      "Car loan and a credit card balance that would otherwise follow the household.",
+      "$30,000",
+      "An auto loan and credit card balances the household would otherwise inherit.",
     ],
     [
-      "Income replacement",
-      "$450,000",
-      "Roughly nine years of the portion of income the household actually spends, covering the years until the youngest child finishes school.",
+      "Lost income",
+      "$480,000",
+      "About ten years of the income the household actually lives on, carrying them until the youngest child is through school.",
     ],
     [
-      "Education",
-      "$120,000",
-      "Two children, at the level this family expects to contribute rather than a full private figure.",
+      "College",
+      "$100,000",
+      "Two kids, based on what this family realistically plans to contribute, not the full private-school price.",
     ],
     [
       "Final expenses",
       "$15,000",
-      "Funeral, burial, and the immediate costs that arrive within days.",
+      "The funeral, burial, and other bills that show up within days.",
     ],
     [
-      "Less existing coverage",
-      "−$100,000",
-      "Group life through an employer, which is real but usually ends with the job.",
+      "Minus current coverage",
+      "−$120,000",
+      "Life insurance through work, which helps but usually disappears if the job does.",
     ],
     [
-      "Less savings earmarked for this",
-      "−$60,000",
-      "Only the portion the family would genuinely spend on these costs, not the emergency fund.",
+      "Minus savings set aside for this",
+      "−$50,000",
+      "Just the savings the family would really use for these costs, leaving the emergency fund alone.",
     ],
     [
-      "Coverage needed",
-      "$690,000",
-      "Round up rather than down. The cost difference between $690,000 and $700,000 is usually small.",
+      "Total coverage to buy",
+      "$665,000",
+      "Round up. Going from $665,000 to $700,000 usually adds very little to the premium.",
     ],
   ],
 };
@@ -73,9 +73,9 @@ export default function HowMuchLifeInsuranceGuide() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "How Much Life Insurance Do You Actually Need?",
+    headline: "Figuring Out How Much Life Insurance You Need",
     description:
-      "A practical method for sizing a life insurance benefit around what a household would actually have to cover.",
+      "A step-by-step method for choosing a life insurance amount based on what your household would really need to pay for.",
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
     author: { "@type": "Organization", name: brand.name, url: SITE_URL },
     publisher: {
@@ -95,7 +95,7 @@ export default function HowMuchLifeInsuranceGuide() {
       {
         "@type": "ListItem",
         position: 3,
-        name: "How Much Life Insurance",
+        name: "Sizing Life Insurance",
         item: PAGE_URL,
       },
     ],
@@ -114,10 +114,10 @@ export default function HowMuchLifeInsuranceGuide() {
 
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Life Insurance Guide</span>
-          <h1>How Much Life Insurance Do You Actually Need?</h1>
+          <span className="subtitle-badge">Planning Your Life Coverage</span>
+          <h1>Figuring Out How Much Life Insurance You Need</h1>
           <p>
-            A method that starts with your household rather than a multiple of your salary.
+            Start with what your family would actually face, not a number tied to your paycheck.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -127,7 +127,7 @@ export default function HowMuchLifeInsuranceGuide() {
               <li className="ms-2 me-2">/</li>
               <li><Link href="/guides">Guides</Link></li>
               <li className="ms-2 me-2">/</li>
-              <li className="current">How Much Life Insurance</li>
+              <li className="current">Sizing Life Insurance</li>
             </ol>
           </div>
         </div>
@@ -139,145 +139,143 @@ export default function HowMuchLifeInsuranceGuide() {
             <div className="col-lg-10 mx-auto">
               <div className="eh-content-block qol-content-block">
                 <p className="eh-lead qol-lead">
-                  You have probably seen the rule about buying ten times your income. It is
-                  popular because it is easy to say, and it is wrong often enough to be
-                  worth ignoring. It produces far too little for a young family with a
-                  large mortgage and far too much for someone whose house is paid off and
-                  whose children have left.
+                  You may have heard you should buy coverage worth ten times your salary. It
+                  sticks because it is simple, but it misses so often that you are better
+                  off setting it aside. A young family with a big mortgage ends up badly
+                  underinsured, and someone with a paid-off home and grown kids ends up
+                  paying for far more than they need.
                 </p>
                 <p>
-                  A better question is simpler and harder: if your income stopped
-                  permanently tomorrow, what would your household actually have to cover,
-                  and for how long? Answer that and the number falls out of it.
+                  Ask yourself something more direct, even if it is harder to answer: if your
+                  paycheck disappeared for good tomorrow, what would your family need to pay
+                  for, and for how many years? Once you answer that, your number follows.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>What to add up</h2>
+                <h2>Step one: add up what your family would need</h2>
                 <ul className="eh-bullets qol-bullets">
                   <li>
-                    <strong>What you owe</strong>
+                    <strong>Your debts</strong>
                     <span>
-                      The remaining mortgage balance, car loans, credit cards, and any
-                      private debt someone else would be left holding. Include anything
-                      co-signed.
+                      What is left on the mortgage, auto loans, credit cards, and any other
+                      debt your family would be stuck with. Count any loan you co-signed.
                     </span>
                   </li>
                   <li>
-                    <strong>Income your household would lose</strong>
+                    <strong>The income that would stop</strong>
                     <span>
-                      Not your gross salary. The portion of it your household actually
-                      spends, multiplied by the number of years they would need it. For
-                      most families that is the years until the youngest child is
-                      independent, or until a surviving partner reaches retirement savings
-                      they can draw on.
+                      Use what your household really spends, not your gross pay, and
+                      multiply it by the years they would rely on it. For most families,
+                      that means until the youngest child is on their own, or until a
+                      surviving spouse can tap retirement savings.
                     </span>
                   </li>
                   <li>
-                    <strong>Costs your death would create</strong>
+                    <strong>New costs your family would face</strong>
                     <span>
-                      Childcare that a stay-at-home parent currently provides for free is
-                      the one people forget, and it is expensive. Add funeral and final
-                      expenses, which arrive within days rather than months.
+                      If a stay-at-home parent handles childcare today, paying someone else
+                      to do it is costly and often overlooked. Include funeral and final
+                      expenses too, since those come due within days.
                     </span>
                   </li>
                   <li>
-                    <strong>Goals you intend to fund</strong>
+                    <strong>Plans you want to pay for</strong>
                     <span>
-                      Education is the common one. Use the figure you actually expect to
-                      contribute, not a full sticker price you were never going to pay.
+                      College is the big one for most families. Use what you really plan to
+                      put toward it, not a full price tag you never intended to cover.
                     </span>
                   </li>
                 </ul>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>What to subtract</h2>
+                <h2>Step two: subtract what you already have</h2>
                 <p>
-                  Existing coverage counts, with one caveat worth taking seriously. Group
-                  life through an employer usually ends when the job does, and it is rarely
-                  portable on good terms. Counting on it means assuming you will still hold
-                  that job on the day it is needed. Subtract it, but do not build the whole
-                  plan on it.
+                  Coverage you already own counts, with one important catch. Life insurance
+                  through your employer typically ends when you leave the job, and taking it
+                  with you is rarely a good deal. Relying on it assumes you will still work
+                  there when your family needs it. Subtract it, but do not make it the
+                  foundation of your plan.
                 </p>
                 <p>
-                  Savings count too, but only the portion your family would genuinely spend
-                  on these costs. An emergency fund is not life insurance and draining it
-                  is not a plan.
+                  Savings count as well, but only the amount your family would actually use
+                  for these costs. Your emergency fund is not a substitute for life
+                  insurance, and spending it down is not a strategy.
                 </p>
               </div>
 
               <ComparisonTable
-                heading="A worked example"
-                intro="One household, sized properly. The numbers are illustrative only — yours will look nothing like these, and that is the point."
+                heading="Putting it together: an example"
+                intro="Here is how the math works for one sample family. These numbers are just an example; your own will be different, which is exactly why you run them."
                 columns={worked.columns}
                 rows={worked.rows}
-                note="Illustrative figures for demonstration. This is not a quote and does not reflect any specific policy or premium."
+                note="Example figures only. This is not a quote and does not represent any particular policy or price."
               />
 
               <div className="eh-content-block qol-content-block">
-                <h2>How long does the coverage need to last?</h2>
+                <h2>Step three: decide how many years you need coverage</h2>
                 <p>
-                  The second question matters as much as the first, and it usually points
-                  at term length. Look at when the obligations you just added up actually
-                  end. If the mortgage has nineteen years left and your youngest is six, a
-                  twenty-year term covers the period where a gap would be catastrophic, and
-                  a thirty-year term is paying for years in which nobody depends on your
-                  income.
+                  How long your coverage lasts matters just as much as the amount, and it
+                  usually tells you which term length to choose. Check when each of the
+                  expenses you listed will actually end. If your mortgage has seventeen
+                  years to go and your youngest is five, a twenty-year term protects your
+                  family through the years when losing your income would be devastating,
+                  while a thirty-year term would cover years when no one relies on it.
                 </p>
                 <p>
-                  That is not an argument for buying the shortest term you can justify.
-                  Renewing later means applying again at an older age with whatever health
-                  you have by then. It is an argument for matching the term to the
-                  obligation and, where affordable, giving yourself a few years of margin.
+                  That does not mean you should pick the shortest term possible. If you need
+                  coverage later, you will apply again when you are older and possibly less
+                  healthy. The goal is to line up the term with your obligations and, if the
+                  budget allows, add a few extra years as a cushion.
                 </p>
                 <p>
-                  If the need never ends — a lifelong dependant, an estate that will owe
-                  something, a legacy you intend to leave — that is where permanent
-                  coverage earns the higher premium rather than the other way round.
+                  When the need lasts a lifetime, such as a dependent who will always need
+                  support, an estate that will owe taxes, or money you want to leave
+                  behind, permanent coverage is worth its higher premium.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>Two mistakes worth avoiding</h2>
+                <h2>Two common mistakes</h2>
                 <p>
-                  <strong>Insuring only the earner.</strong> If one partner stays home, the
-                  household would still have to replace what they do, and the cost of doing
-                  that commercially is not small. Coverage on a non-earning partner is
-                  routinely underbought.
+                  <strong>Only covering the person with the paycheck.</strong> When one
+                  partner stays home, the family would still need to pay for everything that
+                  person does, and hiring that help is expensive. Stay-at-home partners are
+                  very often underinsured.
                 </p>
                 <p>
-                  <strong>Buying less than you need because of the premium.</strong> This is
-                  the common one, and it is usually solved by changing the policy type
-                  rather than the benefit. Term coverage is dramatically cheaper per dollar
-                  than permanent, so a household that cannot afford the permanent policy it
-                  was quoted can often afford the full benefit it actually needs in term
-                  form. Get the amount right first, then work out the structure.
+                  <strong>Cutting coverage to lower the price.</strong> This happens all the
+                  time, and the better fix is usually a different type of policy, not a
+                  smaller benefit. Term costs far less per dollar of coverage than permanent
+                  insurance, so a family that cannot afford a quoted permanent policy can
+                  often get the full amount it needs with term. Settle on the right amount
+                  first, then choose the type.
                 </p>
                 <p className="eh-inline-link qol-inline-link">
                   <Link href="/products/life-insurance">
-                    Compare term, permanent, and final expense coverage
+                    See how term, permanent, and final expense coverage compare
                   </Link>
                 </p>
               </div>
 
               <div className="eh-guide-cta qol-guide-cta">
-                <h2>Want someone to run these numbers with you?</h2>
+                <h2>Want help running your numbers?</h2>
                 <p>
-                  A licensed EveryHealth agent can work through your household&apos;s figures, tell
-                  you which term length matches your obligations, and explain which carriers
-                  tend to view your health history most favourably before you apply
-                  anywhere.
+                  A licensed EveryHealth agent can go through your family&apos;s numbers with you,
+                  suggest a term length that fits your obligations, and point you to the
+                  carriers most likely to look favorably on your health history before you
+                  submit an application.
                 </p>
                 <Link href="/appointment" className="btn-action">
-                  Talk to an agent
+                  Speak with an agent
                 </Link>
               </div>
 
               <p className="eh-guide-disclaimer qol-guide-disclaimer">
-                This guide is general information and is not financial, tax, or legal
-                advice. Figures shown are illustrative and are not quotes. Policy features,
-                riders, availability, and pricing vary by carrier, product, state, and
+                This guide is for general information and is not financial, tax, or legal
+                advice. The figures are examples, not quotes. Policy features, riders,
+                availability, and prices differ by carrier, product, state, and your
                 individual underwriting.
               </p>
             </div>

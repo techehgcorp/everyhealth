@@ -180,27 +180,27 @@ const experienceOptions = [
 
 const steps = [
   {
-    label: "Applicant Information",
-    title: "Employment Application",
+    label: "About You",
+    title: "Apply to Join EveryHealth",
     description:
-      "Apply for the upcoming OEP season. Please have your NPN, state license information, and licensing documents ready.",
+      "We are hiring for the upcoming OEP season. Before you start, have your NPN, state license details, and licensing documents on hand.",
   },
   {
-    label: "Licensing Information",
-    title: "Licensing Information",
+    label: "Your License",
+    title: "Your License and Experience",
     description:
-      "Tell us about your license, states, carrier appointments, and sales experience.",
+      "Share your license details, the states you are licensed in, your carrier appointments, and your sales background.",
   },
   {
-    label: "Documents and FFM",
-    title: "Documents and FFM",
-    description: "Upload proof of your license and FFM certification.",
+    label: "Documents",
+    title: "Upload Your Documents",
+    description: "Attach proof of your license and your FFM certification.",
   },
   {
-    label: "Applicant Certification",
-    title: "Applicant Certification",
+    label: "Review and Submit",
+    title: "Review and Submit",
     description:
-      "Tell us who referred you, then review and confirm each statement before submitting.",
+      "Let us know who referred you, then read and check each statement before you send your application.",
   },
 ];
 
@@ -707,10 +707,10 @@ useEffect(() => {
         <div className="quote-modal__success">
           <img src="/assets/img/health/consultation-4.webp" alt="" />
           <span>Application received</span>
-          <h2>Thank you for applying.</h2>
+          <h2>Thanks, your application is in.</h2>
           <p>
-            Our team has received your application and supporting documents. We will review your licensing information and get back to you as soon as possible.<br></br>
-            If you have any questions, please contact our Information Department at {brand.email}.
+            We have your application and documents. Our team will review your licensing details and reach out soon.<br></br>
+            Questions in the meantime? Email our Information Department at {brand.email}.
           </p>
           {!redirectCancelled ? (
             <p className="job-application__redirect">
@@ -750,7 +750,7 @@ useEffect(() => {
 
             <div className="quote-modal__field">
               <label htmlFor="job-position">
-                Which position are you applying for?
+                What role are you interested in?
               </label>
               <select
                 id="job-position"
@@ -968,16 +968,16 @@ useEffect(() => {
             <UploadField
               id="job-usaIdFront"
               field="usaIdFront"
-              label="Upload Driver License ID — front"
-              hint="Front of your driver license or state ID."
+              label="Driver license or state ID (front)"
+              hint="Upload a photo or scan of the front side."
               required
             />
 
             <UploadField
               id="job-usaIdBack"
               field="usaIdBack"
-              label="Upload Driver License ID — back"
-              hint="Back of the same document."
+              label="Driver license or state ID (back)"
+              hint="Upload the back of the same ID."
               required
             />
 
@@ -985,8 +985,8 @@ useEffect(() => {
               <UploadField
                 id="job-ssnCard"
                 field="ssnCard"
-                label="Copy of Social Security Card"
-                hint="A clear photo or scan."
+                label="Social Security card"
+                hint="A legible photo or scan works."
                 required
               />
             )}

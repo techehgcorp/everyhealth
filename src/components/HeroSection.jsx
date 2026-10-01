@@ -28,6 +28,10 @@ const ZOOM_TO = 1.6;
 const INTRO_MS = 3200;
 const ROLL_DELAY = 200;
 
+// The pipe/spheres animation is switched off for now. Flip back to true to
+// bring back the track, the rolling spheres and the camera push-in.
+const SHOW_PIPE = false;
+
 const easeInOutCubic = (t) =>
   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
@@ -49,6 +53,12 @@ export default function HeroSection() {
   // with the pointer. Positions come from the real track path, so they
   // stay glued to the channel at any viewport size.
   useEffect(() => {
+    if (!SHOW_PIPE) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        videoRef.current?.pause();
+      }
+      return;
+    }
     const rig = rigRef.current;
     const track = trackRef.current;
     if (!rig || !track) return;
@@ -201,6 +211,7 @@ export default function HeroSection() {
         <div className="hero-clinic__wall" />
         <div className="hero-clinic__light" />
 
+        {SHOW_PIPE && (
         <svg
           className="hero-clinic__stage"
           viewBox="0 0 1440 728"
@@ -317,6 +328,7 @@ export default function HeroSection() {
             </g>
           </g>
         </svg>
+        )}
       </div>
 
       <div className="container hero-clinic__inner">
@@ -387,7 +399,7 @@ export default function HeroSection() {
         </div>
 
         {/* Reserves room for the spheres so the copy can never sit on them */}
-        <div className="hero-clinic__floor" aria-hidden="true" />
+        {SHOW_PIPE && <div className="hero-clinic__floor" aria-hidden="true" />}
       </div>
     </section>
   );

@@ -6,14 +6,14 @@ const SITE_URL = brand.siteUrl;
 const PAGE_URL = `${SITE_URL}/guides`;
 
 export const metadata = {
-  title: "Insurance Guides",
+  title: "Coverage Guides",
   description:
-    "Plain-language guides to the costs and rules behind health and life coverage, written by licensed agents.",
+    "Easy-to-read guides from licensed agents on what health and life coverage costs and the rules that come with it.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: `Insurance Guides | ${brand.name}`,
+    title: `Coverage Guides | ${brand.name}`,
     description:
-      "Plain-language guides to the costs and rules behind health and life coverage.",
+      "Easy-to-read guides on what health and life coverage costs and how the rules work.",
     url: PAGE_URL,
     type: "website",
   },
@@ -41,10 +41,10 @@ export default function GuidesPage() {
       {/* EveryHealth Custom Page Header */}
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Educational Library</span>
-          <h1>Insurance Guides & Knowledge</h1>
+          <span className="subtitle-badge">Learn Before You Buy</span>
+          <h1>Coverage Guides</h1>
           <p>
-            The costs, rules, and timing behind coverage decisions, explained plainly without sales pressure.
+            What coverage costs, how the rules work, and when to act, explained simply and with no sales pitch.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -84,15 +84,15 @@ export default function GuidesPage() {
           <div className="closing-cta__box">
             <div className="row align-items-center">
               <div className="col-lg-8">
-                <h2>Have Questions After Reading?</h2>
+                <h2>Want to Talk It Through?</h2>
                 <p>
-                  Our licensed agents are happy to clarify rules, deadlines, or premium calculations for your state.
+                  A licensed agent can walk you through the rules, deadlines, or premium math for your state.
                 </p>
               </div>
               <div className="col-lg-4 text-lg-end mt-4 mt-lg-0">
                 <div className="cta-button-group">
                   <Link href="/appointment" className="btn-cta-light">
-                    Schedule Free Call
+                    Book a Free Call
                   </Link>
                   <a href={`tel:${brand.phoneHref}`} className="btn-cta-phone">
                     <i className="bi bi-telephone-fill" /> {brand.phoneDisplay}

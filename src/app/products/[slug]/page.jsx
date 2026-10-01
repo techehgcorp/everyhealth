@@ -222,7 +222,7 @@ export default async function ProductPage({ params }) {
       )}
 
       {/* SECTION 6: Closing Call To Action Section */}
-      <section className="closing-cta section pt-0">
+      {/* <section className="closing-cta section pt-0">
         <div className="container" data-aos="zoom-in">
           <div className="closing-cta__box">
             <div className="row align-items-center">
@@ -245,7 +245,7 @@ export default async function ProductPage({ params }) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

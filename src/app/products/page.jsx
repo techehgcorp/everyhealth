@@ -5,14 +5,14 @@ import { brand } from "@/lib/brand";
 const SITE_URL = brand.siteUrl;
 
 export const metadata = {
-  title: "Insurance Products",
+  title: "Coverage Options",
   description:
-    "Health, life, final expense, dental, vision, Medicare, ACA, critical illness, and indexed universal life insurance explained by licensed agents.",
+    "Licensed agents help you compare health, ACA, Medicare, life, final expense, indexed universal life, dental, vision, and accident coverage.",
   alternates: { canonical: `${SITE_URL}/products` },
   openGraph: {
-    title: `Insurance Products | ${brand.name}`,
+    title: `Coverage Options | ${brand.name}`,
     description:
-      "Health, life, final expense, dental, vision, Medicare, ACA, critical illness, and indexed universal life insurance explained by licensed agents.",
+      "Licensed agents help you compare health, ACA, Medicare, life, final expense, indexed universal life, dental, vision, and accident coverage.",
     url: `${SITE_URL}/products`,
     type: "website",
   },
@@ -40,10 +40,10 @@ export default function ProductsPage() {
       {/* EveryHealth Custom Page Header */}
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Solutions Portfolio</span>
-          <h1>Insurance Products</h1>
+          <span className="subtitle-badge">What We Offer</span>
+          <h1>Coverage Options</h1>
           <p>
-            Compare the coverage we help members enroll in, from health and life insurance to Medicare, dental, vision, and final expense planning.
+            Explore every type of coverage we help clients choose, including health, life, Medicare, dental, vision, and final expense.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -101,9 +101,9 @@ export default function ProductsPage() {
           <div className="closing-cta__box">
             <div className="row align-items-center">
               <div className="col-lg-8">
-                <h2>Not Sure Which Plan You Need?</h2>
+                <h2>Still Deciding?</h2>
                 <p>
-                  Our licensed insurance specialists will help you analyze your budget, doctor networks, and coverage requirements.
+                  Talk it through with a licensed advisor. We will look at your budget, your doctors, and what you need covered.
                 </p>
               </div>
               <div className="col-lg-4 text-lg-end mt-4 mt-lg-0">

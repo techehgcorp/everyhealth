@@ -9,12 +9,12 @@ const PAGE_URL = `${SITE_URL}/faq`;
 export const metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Plain answers to the questions that apply across every kind of coverage: what premiums and deductibles mean, when you can enroll, what a broker costs, and how to reach a licensed agent.",
+    "Straightforward answers to coverage questions people ask us most: insurance terms, enrollment timing, what a broker costs, and how to reach a licensed agent.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `Frequently Asked Questions | ${brand.name}`,
     description:
-      "What premiums and deductibles mean, when you can enroll, and what working with a licensed broker actually costs.",
+      "Insurance terms explained, when you can enroll, and why working with a licensed broker costs you nothing.",
     url: PAGE_URL,
     type: "website",
   },
@@ -54,10 +54,10 @@ export default function FaqPage() {
       {/* EveryHealth Custom Page Header */}
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Help & Answers</span>
+          <span className="subtitle-badge">Your Questions, Answered</span>
           <h1>Frequently Asked Questions</h1>
           <p>
-            Plain answers to common coverage questions about premiums, enrollment periods, subsidies, and working with a licensed broker.
+            Clear answers about premiums, enrollment windows, savings, and what it is like to work with a licensed broker.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -75,9 +75,9 @@ export default function FaqPage() {
       <section className="py-5 bg-white">
         <div className="container py-4" data-aos="fade-up">
           <div className="text-center max-width-700 mx-auto mb-4">
-            <span className="subtitle-badge">Product Specific Questions</span>
-            <h2 className="fw-bold" style={{ color: "#1A3A6B" }}>Questions by Coverage Category</h2>
-            <p className="text-muted">Select a product to view detailed answers for specific plans.</p>
+            <span className="subtitle-badge">By Coverage Type</span>
+            <h2 className="fw-bold" style={{ color: "#1A3A6B" }}>Browse Questions by Product</h2>
+            <p className="text-muted">Pick a type of coverage to see the questions we hear about it most.</p>
           </div>
 
           <div className="row g-3 justify-content-center">
@@ -99,8 +99,8 @@ export default function FaqPage() {
       <section className="py-5" style={{ background: "#F8FAFC" }}>
         <div className="container py-4" data-aos="fade-up">
           <div className="text-center max-width-700 mx-auto mb-4">
-            <span className="subtitle-badge">General Guidance</span>
-            <h2 className="fw-bold" style={{ color: "#1A3A6B" }}>General Coverage Questions</h2>
+            <span className="subtitle-badge">The Basics</span>
+            <h2 className="fw-bold" style={{ color: "#1A3A6B" }}>Questions About Coverage in General</h2>
           </div>
 
           <div className="row justify-content-center">
@@ -129,9 +129,9 @@ export default function FaqPage() {
           <div className="closing-cta__box">
             <div className="row align-items-center">
               <div className="col-lg-8">
-                <h2>Still Have Questions?</h2>
+                <h2>Did Not Find Your Answer?</h2>
                 <p>
-                  Speak with a licensed advisor today. There is zero cost and no obligation for our guidance.
+                  A licensed advisor can help today. It is free, and there is no obligation.
                 </p>
               </div>
               <div className="col-lg-4 text-lg-end mt-4 mt-lg-0">
@@ -140,7 +140,7 @@ export default function FaqPage() {
                     <i className="bi bi-telephone-fill" /> {brand.phoneDisplay}
                   </a>
                   <Link href="/appointment" className="btn-cta-light">
-                    Book Consultation
+                    Schedule a Call
                   </Link>
                 </div>
               </div>

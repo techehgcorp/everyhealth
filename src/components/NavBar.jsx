@@ -35,6 +35,9 @@ const coverageColumns = COVERAGE_GROUPS.map((group) => ({
 // Self enrollment used to be a top-level nav item for three partner links.
 // It now lives as a footer strip inside the Coverage panel — same links,
 // none of the horizontal real estate.
+// Switched off for now, along with the home page portal section. Flip back
+// to true to show the strip again.
+const SHOW_SELF_ENROLLMENT = false;
 const selfEnrollmentPages = [
   { href: "/self-enrollment/one-share", label: "One Share" },
   { href: "/self-enrollment/ameritas", label: "Ameritas" },
@@ -257,6 +260,7 @@ export default function NavBar() {
                       <i className="bi bi-arrow-right" aria-hidden="true" />
                     </Link>
 
+                    {SHOW_SELF_ENROLLMENT && (
                     <p className="mega-panel__enroll">
                       <span>Prefer to enroll yourself?</span>{" "}
                       {selfEnrollmentPages.map((item, index) => (
@@ -272,6 +276,7 @@ export default function NavBar() {
                         </Fragment>
                       ))}
                     </p>
+                    )}
                   </div>
                 </div>
               </div>

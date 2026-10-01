@@ -2171,6 +2171,314 @@ body.quote-modal-open {
   color: #ffffff;
 }
 
+/* 3. Real Help — worry-first cards: the customer's question as the
+   heading, our answer underneath, a link to the matching page. */
+.real-help {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.real-help-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--accent, #75C900);
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.real-help-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(29, 174, 233, 0.12);
+}
+
+.real-help-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: var(--accent-soft, #F0FBDC);
+  color: var(--accent-dark, #58A300);
+  font-size: 1.5rem;
+}
+
+.real-help-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--dark, #1A3A6B);
+  margin-bottom: 12px;
+}
+
+.real-help-card p {
+  flex: 1;
+  font-size: 0.93rem;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.real-help-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-dark, #168FC8);
+}
+
+.real-help-card__link:hover { color: var(--primary-deep, #0F6694); }
+
+@media (prefers-reduced-motion: reduce) {
+  .real-help-card { transition: none; }
+  .real-help-card:hover { transform: none; }
+}
+
+/* 3b. How It Works — photo on one side, a vertical three-step
+   timeline on the other; stacks on smaller screens. */
+.how-it-works {
+  padding: 85px 0;
+  background: var(--surface-alt, #F8FAFC);
+}
+
+.how-it-works__media {
+  position: relative;
+}
+
+.how-it-works__media img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(26, 58, 107, 0.12);
+}
+
+.how-it-works__badge {
+  position: absolute;
+  left: 24px;
+  bottom: -22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.how-it-works__badge i {
+  font-size: 1.8rem;
+  color: var(--accent, #75C900);
+}
+
+.how-it-works__badge strong {
+  display: block;
+  color: var(--dark, #1A3A6B);
+}
+
+.how-it-works__badge span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.how-it-works__title {
+  margin-bottom: 12px;
+  color: var(--dark, #1A3A6B);
+}
+
+.how-it-works__lead {
+  margin-bottom: 28px;
+  color: #64748b;
+}
+
+.how-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each step hangs off a numbered dot; a line joins the dots */
+.how-step {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  padding-bottom: 24px;
+}
+
+.how-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 44px;
+  bottom: 4px;
+  left: 21px;
+  border-left: 2px dashed var(--primary-subtle, #C8F1F7);
+}
+
+.how-step__num {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-bg, #E8F9FC);
+  border: 2px solid var(--primary, #1DAEE9);
+  color: var(--primary-dark, #168FC8);
+  font-weight: 800;
+}
+
+.how-step h3 {
+  margin: 8px 0 6px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark, #1A3A6B);
+}
+
+.how-step p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.how-it-works__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 12px;
+}
+
+.how-it-works__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--primary-dark, #168FC8);
+}
+
+.how-it-works__link:hover { color: var(--primary-deep, #0F6694); }
+
+@media (max-width: 991.98px) {
+  .how-it-works__media { margin-bottom: 20px; }
+}
+
+@media (max-width: 575.98px) {
+  .how-it-works__badge { left: 12px; right: 12px; }
+}
+
+/* 5. Home FAQ — native <details> accordion, no JS needed */
+.home-faq {
+  padding: 85px 0;
+  background: #ffffff;
+}
+
+.home-faq__intro {
+  position: sticky;
+  top: 120px;
+}
+
+.home-faq__intro h2 {
+  margin-bottom: 12px;
+  color: var(--dark, #1A3A6B);
+}
+
+.home-faq__intro p {
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.home-faq__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark, #1A3A6B);
+}
+
+.home-faq__phone i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent, #75C900);
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+.home-faq__phone:hover { color: var(--primary-dark, #168FC8); }
+
+.home-faq__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 24px;
+}
+
+.home-faq__links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: var(--primary-dark, #168FC8);
+}
+
+.home-faq__links a:hover { color: var(--primary-deep, #0F6694); }
+
+.home-faq__list {
+  border-top: 1px solid #e2e8f0;
+}
+
+.home-faq__item {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.home-faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--dark, #1A3A6B);
+  cursor: pointer;
+  list-style: none;
+}
+
+.home-faq__item summary::-webkit-details-marker { display: none; }
+
+.home-faq__item summary:hover { color: var(--primary-dark, #168FC8); }
+
+.home-faq__item summary i {
+  flex: none;
+  font-size: 1.1rem;
+  color: var(--primary, #1DAEE9);
+  transition: transform 0.25s ease;
+}
+
+.home-faq__item[open] summary i { transform: rotate(45deg); }
+
+.home-faq__item p {
+  margin: 0;
+  padding: 0 40px 22px 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+@media (max-width: 991.98px) {
+  .home-faq__intro { position: static; }
+}
+
 /* 4. Knowledge Hub */
 .knowledge-hub {
   padding: 85px 0;
@@ -2310,11 +2618,38 @@ body.quote-modal-open {
 
 /* Page Header & Top Clearance for Inner Pages */
 .eh-page-header {
-  background: linear-gradient(135deg, #0F172A 0%, #1A3A6B 100%);
+  background:
+    radial-gradient(ellipse 55% 70% at 12% 0%, rgba(29, 174, 233, 0.28) 0%, rgba(29, 174, 233, 0) 70%),
+    radial-gradient(ellipse 45% 60% at 92% 100%, rgba(117, 201, 0, 0.14) 0%, rgba(117, 201, 0, 0) 70%),
+    linear-gradient(135deg, #0F172A 0%, #1A3A6B 100%);
   padding: 165px 0 50px !important;
   color: #ffffff;
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+/* Texture over the flat navy: the brand-colour glows above, plus a faint
+   dot grid that fades toward the edges and a fine grain. Behind the copy. */
+.eh-page-header::before,
+.eh-page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.eh-page-header::before {
+  background: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1.4px) 0 0 / 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 45%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 45%, #000 40%, transparent 100%);
+}
+
+.eh-page-header::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  opacity: 0.07;
+  mix-blend-mode: overlay;
 }
 
 .page-title {
@@ -3063,4 +3398,26 @@ body:has(.hero-clinic) .header .hero-page .navmenu a.quote-nav-button {
 @media (max-width: 1199.98px) {
   .branding--clean .navmenu { justify-self: end; }
   .header .branding--clean .mobile-nav-toggle { color: #1E293B; }
+}
+
+/* Inner pages open on the dark .eh-page-header, so while the navbar is
+   still transparent (body not .scrolled) its links go white. Hover and
+   the current page keep the green; once scrolled the bar turns white and
+   the dark defaults above take over again. */
+@media (min-width: 1200px) {
+  body:has(.eh-page-header):not(.scrolled) .header .branding--clean .navmenu > ul > li > .nav-trigger,
+  body:has(.eh-page-header):not(.scrolled) .header .branding--clean .branding__link {
+    color: #ffffff;
+  }
+  body:has(.eh-page-header):not(.scrolled) .header .branding--clean .navmenu > ul > li > .nav-trigger:hover,
+  body:has(.eh-page-header):not(.scrolled) .header .branding--clean .navmenu > ul > li > .nav-trigger.active,
+  body:has(.eh-page-header):not(.scrolled) .header .branding--clean .branding__link:hover,
+  body:has(.eh-page-header):not(.scrolled) .header .branding--clean .branding__link.active {
+    color: var(--nav-hover-color);
+  }
+}
+@media (max-width: 1199.98px) {
+  body:has(.eh-page-header):not(.scrolled):not(.mobile-nav-active) .header .branding--clean .mobile-nav-toggle {
+    color: #ffffff;
+  }
 }

@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand";
 
-export const metadata = { title: "Client Testimonials" };
+export const metadata = {
+  title: "Client Stories",
+  description:
+    "Hear from individuals, families, and seniors about working with EveryHealth to choose and manage their coverage.",
+};
 
 const testimonials = [
   {
@@ -43,10 +47,10 @@ export default function TestimonialsPage() {
         {/* EveryHealth Custom Page Header */}
         <div className="eh-page-header text-center">
           <div className="container">
-            <span className="subtitle-badge">Client Reviews</span>
-            <h1>What Members Say About {brand.name}</h1>
+            <span className="subtitle-badge">In Their Words</span>
+            <h1>Stories From Our Clients</h1>
             <p>
-              Read real feedback from individuals, families, and seniors who compare and manage their coverage with our guidance.
+              Individuals, families, and seniors share what it was like to choose and manage their coverage with {brand.name}.
             </p>
           </div>
           <div className="eh-breadcrumbs mt-4">
@@ -104,15 +108,15 @@ export default function TestimonialsPage() {
             <div className="closing-cta__box">
               <div className="row align-items-center">
                 <div className="col-lg-8">
-                  <h2>Experience Honest Coverage Support</h2>
+                  <h2>Ready to Write Your Own Story?</h2>
                   <p>
-                    Let us help you compare health, life, Medicare, dental, and vision options with zero cost for our guidance.
+                    We will help you sort through health, life, Medicare, dental, and vision coverage, and our guidance is always free.
                   </p>
                 </div>
                 <div className="col-lg-4 text-lg-end mt-4 mt-lg-0">
                   <div className="cta-button-group">
                     <Link href="/appointment" className="btn-cta-light">
-                      Schedule Consultation
+                      Book a Free Call
                     </Link>
                     <a href={`tel:${brand.phoneHref}`} className="btn-cta-phone">
                       <i className="bi bi-telephone-fill" /> {brand.phoneDisplay}

@@ -1,26 +1,30 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand";
 
-export const metadata = { title: "Our Team" };
+export const metadata = {
+  title: "Meet Our Team",
+  description:
+    "Meet the licensed EveryHealth advisors and support teams who help you choose coverage and stay with you after you enroll.",
+};
 
 const teamMembers = [
   {
-    image: "/assets/img/team/team2.png",
+    image: "/assets/img/pages/team-client-success.webp",
     title: "Client Success Team",
     description:
-      "Our client success specialists guide members through plan questions, enrollment updates, and follow-up support with clear and dependable communication.",
+      "Your go-to people for plan questions, enrollment updates, and follow-ups. They keep you informed with clear answers and reliable check-ins.",
   },
   {
-    image: "/assets/img/team/team3.png",
+    image: "/assets/img/pages/team-benefits-support.webp",
     title: "Benefits Support Team",
     description:
-      "This team helps individuals and families understand coverage details, compare options, and feel confident about the benefits that fit their needs.",
+      "They break down coverage details, line up your options, and make sure you understand the benefits you are choosing for yourself or your family.",
   },
   {
-    image: "/assets/img/team/team4.png",
+    image: "/assets/img/pages/team-operations.webp",
     title: "Operations & Retention Team",
     description:
-      "From renewals to ongoing account care, our operations team keeps every step organized so members receive responsive service long after enrollment.",
+      "They handle renewals, account updates, and the behind-the-scenes work that keeps your coverage running smoothly year after year.",
   },
 ];
 
@@ -30,10 +34,10 @@ export default function TeamPage() {
       {/* Custom EveryHealth Page Header */}
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Licensed Insurance Specialists</span>
-          <h1>Meet the EveryHealth Team</h1>
+          <span className="subtitle-badge">The People Behind EveryHealth</span>
+          <h1>Our Team</h1>
           <p>
-            The dedicated professionals guiding members with licensed advice, everyday service, and insurance expertise.
+            Licensed advisors and support specialists who know insurance inside and out, and who pick up the phone when you call.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -51,9 +55,9 @@ export default function TeamPage() {
       <section className="py-5" style={{ background: "#F8FAFC" }}>
         <div className="container py-4" data-aos="fade-up">
           <div className="text-center mb-5">
-            <span className="subtitle-badge">Dedicated Departments</span>
-            <h2 className="fw-bold" style={{ color: "#1A3A6B" }}>Support at Every Step</h2>
-            <p className="text-muted">From initial quote through ongoing account care, our specialized teams are here for you.</p>
+            <span className="subtitle-badge">How We Are Organized</span>
+            <h2 className="fw-bold" style={{ color: "#1A3A6B" }}>A Team for Every Stage</h2>
+            <p className="text-muted">Different specialists handle each part of your journey, from your first quote to your yearly renewal.</p>
           </div>
 
           <div className="row g-4">
@@ -78,24 +82,24 @@ export default function TeamPage() {
           <div className="row align-items-center g-5">
             <div className="col-lg-6">
               <img
-                src="/assets/img/team/team1.png"
-                alt="EveryHealth sales team"
+                src="/assets/img/pages/team-advisors.webp"
+                alt="EveryHealth advisors meeting around a conference table"
                 className="img-fluid rounded-4 shadow-sm"
               />
             </div>
             <div className="col-lg-6">
-              <span className="subtitle-badge">Advisory Division</span>
+              <span className="subtitle-badge">Our Advisors</span>
               <h2 className="fw-bold mb-3" style={{ color: "#1A3A6B" }}>
-                Advisors Focused on Finding the Right Coverage
+                The First Voice You Hear When You Call
               </h2>
               <p className="lead text-muted mb-3">
-                Our sales team is the first point of contact for families, individuals, and seniors exploring coverage. They listen carefully and explain terms in plain language.
+                When individuals, families, and seniors start looking for coverage, our advisors are the ones they talk to first. They listen before they recommend and explain every term in everyday language.
               </p>
               <p className="text-muted mb-4">
-                Whether you need ACA Marketplace guidance, Medicare plan comparisons, Life insurance, Dental, or Vision coverage, our advisors keep the process personal, transparent, and hassle-free.
+                ACA Marketplace, Medicare, life, dental, or vision: whatever you are shopping for, your advisor keeps things personal, honest, and simple from start to finish.
               </p>
               <Link href="/appointment" className="btn-advantage-primary">
-                Book a Consultation <i className="bi bi-arrow-right ms-2" />
+                Talk to an Advisor <i className="bi bi-arrow-right ms-2" />
               </Link>
             </div>
           </div>

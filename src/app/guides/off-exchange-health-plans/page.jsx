@@ -20,14 +20,14 @@ const PAGE_URL = `${SITE_URL}/guides/off-exchange-health-plans`;
 const VERIFIED_ON = "September 2026";
 
 export const metadata = {
-  title: "Off-Exchange and Private Health Plans, Explained",
+  title: "A Guide to Off-Exchange and Private Health Plans",
   description:
-    "What off-exchange health insurance is, how it differs from Marketplace coverage, and an honest look at short-term, fixed indemnity, and health sharing alternatives.",
+    "What it means to buy health insurance off the exchange, how it compares with Marketplace plans, and a candid look at short-term, fixed indemnity, and health sharing options.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: `Off-Exchange and Private Health Plans, Explained | ${brand.name}`,
+    title: `A Guide to Off-Exchange and Private Health Plans | ${brand.name}`,
     description:
-      "What you give up and what you gain buying health coverage outside the Marketplace.",
+      "The pros and cons of buying health coverage outside the Marketplace.",
     url: PAGE_URL,
     type: "article",
   },
@@ -38,59 +38,59 @@ const onVsOff = {
   rows: [
     [
       "Premium tax credits",
-      "Available if your income qualifies",
-      "Not available at any income level",
+      "Yes, if your income qualifies",
+      "No, regardless of income",
     ],
     [
       "Pre-existing conditions",
-      "Covered, guaranteed issue",
-      "Covered, guaranteed issue",
+      "Covered; you cannot be turned down",
+      "Covered; you cannot be turned down",
     ],
     [
-      "Ten essential health benefits",
-      "Required",
-      "Required",
+      "The ten essential health benefits",
+      "Must be included",
+      "Must be included",
     ],
     [
       "Cost-sharing reductions",
-      "Available on Silver plans if you qualify",
-      "Not available",
+      "Yes, on Silver plans for those who qualify",
+      "No",
     ],
     [
-      "When you can enroll",
-      "Open Enrollment or a qualifying life event",
-      "Open Enrollment or a qualifying life event",
+      "When you can sign up",
+      "During Open Enrollment or after a qualifying life event",
+      "During Open Enrollment or after a qualifying life event",
     ],
     [
-      "Provider networks",
-      "Often narrower HMO and EPO networks",
-      "Sometimes includes PPOs a carrier holds back from the exchange",
+      "Doctor networks",
+      "Frequently smaller HMO and EPO networks",
+      "May include PPO networks a carrier does not offer on the exchange",
     ],
   ],
 };
 
 const alternatives = {
-  columns: ["Product", "How it works", "What to watch"],
+  columns: ["Type of plan", "How it works", "What to watch out for"],
   rows: [
     [
       "Short-term medical",
-      "Temporary coverage meant to bridge a gap between two comprehensive plans.",
-      "Does not cover pre-existing conditions, is medically underwritten, and can decline you. Duration limits are set by your state.",
+      "Stopgap coverage designed to fill the space between two full health plans.",
+      "Excludes pre-existing conditions, reviews your health before approving you, and can say no. Your state decides how long it can last.",
     ],
     [
       "Fixed indemnity",
-      "Pays a flat cash amount per event, such as a set dollar figure per doctor visit or hospital day, regardless of the actual bill.",
-      "Not comprehensive coverage. The payout is unrelated to what you are billed, which leaves you exposed on a large claim.",
+      "Pays a set cash amount for each event, like a fixed sum per doctor visit or per day in the hospital, no matter what the bill is.",
+      "This is not full coverage. Because the payment has nothing to do with the actual bill, a big claim can leave you with a large balance.",
     ],
     [
       "Health care sharing ministry",
-      "A membership arrangement where participants contribute toward each other's medical costs.",
-      "Not insurance and not regulated as insurance. No contractual guarantee that a bill will be paid, and pre-existing conditions are commonly limited.",
+      "A membership group whose members chip in to help pay one another's medical bills.",
+      "It is not insurance and is not regulated like insurance. Nothing in a contract guarantees your bill gets paid, and pre-existing conditions are often restricted.",
     ],
     [
       "Accident and critical illness",
-      "Pays a cash benefit on a covered injury or a covered diagnosis.",
-      "Supplemental only. Designed to sit alongside a health plan, never to replace one.",
+      "Pays you cash after a covered injury or a covered diagnosis.",
+      "Meant only as an add-on. It works next to a health plan and should never take its place.",
     ],
   ],
 };
@@ -99,9 +99,9 @@ export default function OffExchangeGuide() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Off-Exchange and Private Health Plans, Explained",
+    headline: "A Guide to Off-Exchange and Private Health Plans",
     description:
-      "What off-exchange health insurance is, how it differs from Marketplace coverage, and how the non-ACA alternatives actually work.",
+      "What it means to buy health insurance off the exchange, how it compares with Marketplace coverage, and how plans outside the ACA really work.",
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
     author: { "@type": "Organization", name: brand.name, url: SITE_URL },
     publisher: {
@@ -135,10 +135,10 @@ export default function OffExchangeGuide() {
 
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Health Plans Guide</span>
-          <h1>Off-Exchange and Private Health Plans, Explained</h1>
+          <span className="subtitle-badge">Shopping for Health Coverage</span>
+          <h1>A Guide to Off-Exchange and Private Health Plans</h1>
           <p>
-            What you give up, what you gain, and which of the private alternatives are actually insurance.
+            The tradeoffs of buying outside the Marketplace, and which private options really count as insurance.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -160,168 +160,163 @@ export default function OffExchangeGuide() {
             <div className="col-lg-10 mx-auto">
               <div className="eh-content-block qol-content-block">
                 <p className="eh-lead qol-lead">
-                  Off-exchange simply means you bought the plan somewhere other than the
-                  government Marketplace. It does not mean the plan is worse, and it does
-                  not mean the plan is unregulated. It does mean one specific thing: no
-                  premium tax credits, at any income.
+                  Buying off-exchange just means getting your plan from somewhere other than
+                  the government Marketplace. That does not make the plan worse or less
+                  regulated. It does mean one thing for certain: you cannot get premium tax
+                  credits, whatever your income.
                 </p>
                 <p>
-                  Carriers sell ACA-compliant coverage directly and through brokers,
-                  bypassing HealthCare.gov and the state exchanges entirely. Those plans
-                  carry the same federal protections as anything on the Marketplace. Sold
-                  alongside them is a second category of private product that sits outside
-                  the ACA altogether, and that is where the real differences hide. This
-                  guide covers both.
+                  Insurance companies sell ACA-compliant plans on their own and through
+                  brokers, without going through HealthCare.gov or a state exchange. Those
+                  plans come with the same federal protections as Marketplace plans. There
+                  is also a second group of private products that are not covered by the ACA
+                  at all, and that is where the important differences are. We explain both
+                  below.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>ACA-compliant, bought privately</h2>
+                <h2>ACA plans you buy directly</h2>
                 <p>
-                  An ACA-compliant off-exchange plan is regulated identically to an
-                  on-exchange one. It has to cover the ten essential health benefits. It
-                  cannot decline you or charge you more for a pre-existing condition. It
-                  has an out-of-pocket maximum. The only meaningful differences are where
-                  you buy it, whether a subsidy can be applied, and occasionally the
-                  network.
+                  An ACA-compliant plan bought off the exchange follows exactly the same rules
+                  as one bought on it. It must include the ten essential health benefits,
+                  cannot turn you down or charge more for a pre-existing condition, and has
+                  an out-of-pocket maximum. What differs is where you buy it, whether you can
+                  use a subsidy, and sometimes which doctors are in the network.
                 </p>
                 <p>
-                  That last one is why people choose it deliberately. In some counties a
-                  carrier reserves its broader PPO network for off-exchange products, so
-                  buying privately is how you reach a wider set of doctors and hospitals.
-                  If your specialist is the reason you are shopping, this is worth asking
-                  about by name.
+                  The network is the main reason people pick this route on purpose. In some
+                  counties, an insurer only offers its wider PPO network on plans sold off
+                  the exchange, so buying direct is the way to reach more doctors and
+                  hospitals. If keeping a particular specialist is driving your search, ask
+                  about that doctor specifically.
                 </p>
               </div>
 
               <ComparisonTable
-                heading="On-exchange compared with off-exchange"
+                heading="Buying on the exchange versus off it"
                 columns={onVsOff.columns}
                 rows={onVsOff.rows}
-                note="Both types follow the same annual enrollment calendar. Buying privately does not open a year-round window for ACA-compliant coverage."
+                note="Both follow the same yearly enrollment schedule. Buying direct does not let you get ACA-compliant coverage at any time of year."
               />
 
               <div className="eh-content-block qol-content-block">
-                <h2>Who this actually suits</h2>
+                <h2>Who should consider it</h2>
                 <p>
-                  The honest answer is a narrower group than the marketing suggests. Since
-                  the enhanced premium tax credits expired at the end of 2025, the original
-                  income cliff is back in force, and above that threshold no premium tax
-                  credit is available on any plan. If your household is above it, you are
-                  paying full retail either way, and the exchange has nothing to offer you
-                  that a private carrier does not.
+                  Fewer people than the ads would have you believe. Since the enhanced premium
+                  tax credits ended at the close of 2025, the original income cutoff has
+                  returned, and above it there is no premium tax credit on any plan. If your
+                  household earns more than that, you pay full price wherever you buy, and
+                  the exchange offers you nothing a carrier cannot.
                 </p>
                 <p>
-                  Below that threshold, buying off-exchange means turning down money you
-                  are entitled to. It is very rarely the right call. The one exception
-                  worth taking seriously is a network you cannot get on the exchange and a
-                  medical relationship you are unwilling to break.
+                  If you are under the cutoff, buying off the exchange means giving up savings
+                  you qualify for, which is almost never a good idea. The main exception is
+                  when the network you need is not available on the exchange and you are not
+                  willing to leave a doctor you rely on.
                 </p>
                 <p>
-                  Whether you fall above or below depends on your household income and size
-                  this year, not last year, and the thresholds move annually. That is a
-                  five-minute conversation, and it is worth having before you assume.
+                  Which side of the line you are on depends on this year&apos;s household income
+                  and size, not last year&apos;s, and the limits change every year. Sorting it
+                  out takes about five minutes, so check before you assume.
                 </p>
                 <p className="eh-inline-link qol-inline-link">
                   <Link href="/products/aca-marketplace-plans">
-                    How Marketplace coverage and enrollment windows work
+                    Learn how Marketplace plans and enrollment periods work
                   </Link>
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>The enrollment window still applies</h2>
+                <h2>You still have to wait for enrollment</h2>
                 <p>
-                  This is the most common and most expensive misunderstanding about
-                  off-exchange coverage. ACA-compliant plans bought privately follow the
-                  same calendar as Marketplace plans. You cannot buy one in July because a
-                  broker sells it directly. Outside Open Enrollment you need a qualifying
-                  life event, exactly as you would on the exchange.
+                  This is the misunderstanding that costs people the most. ACA-compliant plans
+                  sold directly follow the same schedule as Marketplace plans. Buying through
+                  a broker does not let you sign up in July. Outside Open Enrollment, you
+                  need a qualifying life event, just like on the exchange.
                 </p>
                 <p>
-                  If someone offers you comprehensive major medical coverage outside that
-                  window with no qualifying event, what they are selling is not
-                  ACA-compliant major medical. It is one of the products below.
+                  If someone is selling you full major medical coverage outside that window
+                  and you have no qualifying event, it is not ACA-compliant coverage. It is
+                  one of the products described below.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>The non-ACA alternatives</h2>
+                <h2>Options outside the ACA</h2>
                 <p>
-                  These can be bought year-round because they are not governed by the ACA.
-                  That freedom is the entire tradeoff: no guaranteed issue, no required
-                  benefit floor, and in one case, no contractual obligation to pay your
-                  bills at all.
+                  You can buy these at any time of year because the ACA does not apply to
+                  them. That flexibility comes at a price: no guarantee you will be accepted,
+                  no minimum set of benefits, and, for one of them, no contract that obligates
+                  anyone to pay your bills.
                 </p>
               </div>
 
               <ComparisonTable
                 columns={alternatives.columns}
                 rows={alternatives.rows}
-                note={`Rules for these products change frequently and vary by state. Verified ${VERIFIED_ON}.`}
+                note={`The rules for these plans change often and differ by state. Last checked ${VERIFIED_ON}.`}
               />
 
               <div className="eh-content-block qol-content-block">
-                <h2>Short-term medical, specifically</h2>
+                <h2>A closer look at short-term plans</h2>
                 <p>
-                  Federal rules on short-term plans have been rewritten repeatedly. A 2024
-                  federal rule limited initial terms to three months and total duration
-                  including renewals to four. In August 2025 the federal departments
-                  announced they would not enforce that rule, and a revised rule has been
-                  expected since. In practice this means your state&apos;s law is what
-                  determines how long a short-term plan can run where you live, and some
-                  states restrict these plans heavily or prohibit them outright.
+                  The federal rules for short-term plans keep changing. A 2024 federal rule
+                  capped the first term at three months and the total length, including
+                  renewals, at four. In August 2025, the federal agencies said they would not
+                  enforce that rule, and a new version has been expected ever since. For now,
+                  your state&apos;s law sets how long a short-term plan can last where you
+                  live, and some states limit these plans severely or ban them completely.
                 </p>
                 <p>
-                  What has not changed is what these plans do. They are medically
-                  underwritten, they can decline you, and they do not cover pre-existing
-                  conditions. As a bridge between two comprehensive plans they are useful.
-                  As a substitute for one, they are the wrong tool, and the year you find
-                  that out is the year you needed the coverage.
+                  How these plans work has stayed the same. They review your health, they can
+                  reject you, and they exclude pre-existing conditions. They are handy for
+                  filling a short gap between two full plans. Used as a replacement for real
+                  coverage, they fall short, and you usually learn that in the year you
+                  actually need care.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>A straight answer on health care sharing ministries</h2>
+                <h2>The honest truth about health care sharing ministries</h2>
                 <p>
-                  We enroll members in OneShare Health, and we would rather you hear this
-                  from us than find it somewhere else and wonder what we left out. A health
-                  care sharing ministry is not health insurance. It is not regulated as
-                  insurance, it is not backed by state guaranty protections, and there is no
-                  contractual guarantee that a submitted bill will be shared. Pre-existing
-                  conditions are commonly limited or excluded, and membership generally
-                  requires agreeing to a statement of beliefs.
+                  We help people join OneShare Health, so we want you to hear this from us
+                  directly rather than wonder later what we did not mention. A health care
+                  sharing ministry is not health insurance. It is not regulated like
+                  insurance, it has no state guaranty fund behind it, and no contract
+                  guarantees that a bill you submit will be shared. Pre-existing conditions
+                  are often limited or excluded, and members usually have to agree to a
+                  statement of beliefs.
                 </p>
                 <p>
-                  For some households it is still the right fit, particularly where the
-                  values alignment matters and the budget will not stretch to an
-                  unsubsidised premium. What it should never be is a surprise. If you are
-                  considering one, you should understand precisely what you are and are not
-                  buying first.
+                  It can still be a good fit for some families, especially when shared values
+                  matter to them and an unsubsidized premium is out of reach. It should just
+                  never catch you off guard. If you are thinking about joining, make sure you
+                  know exactly what you are getting and what you are not.
                 </p>
                 <p className="eh-inline-link qol-inline-link">
                   <Link href="/self-enrollment/one-share">
-                    More about OneShare Health membership
+                    Learn more about joining OneShare Health
                   </Link>
                 </p>
               </div>
 
               <div className="eh-guide-cta qol-guide-cta">
-                <h2>Not sure which side of the line you fall on?</h2>
+                <h2>Not sure which option is right for you?</h2>
                 <p>
-                  A licensed EveryHealth agent can run your household numbers, check whether your
-                  doctors sit in an on-exchange or off-exchange network, and tell you
-                  plainly if the Marketplace is the better deal.
+                  A licensed EveryHealth agent can work through your household&apos;s numbers,
+                  check whether your doctors are in an on-exchange or off-exchange network,
+                  and tell you honestly whether the Marketplace is the better choice.
                 </p>
                 <Link href="/appointment" className="btn-action">
-                  Talk to an agent
+                  Speak with an agent
                 </Link>
               </div>
 
               <p className="eh-guide-disclaimer qol-guide-disclaimer">
-                This guide is general information and is not insurance, tax, or legal
-                advice. Plan availability, benefits, networks, and the rules governing
-                non-ACA products vary by state and carrier and change over time. EveryHealth
+                This guide is for general information and is not insurance, tax, or legal
+                advice. Plan availability, benefits, networks, and the rules for non-ACA
+                products differ by state and carrier and can change. EveryHealth
                 does not offer every plan available in your area.
               </p>
             </div>

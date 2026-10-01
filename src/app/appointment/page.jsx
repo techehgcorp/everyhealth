@@ -2,7 +2,11 @@ import Link from "next/link";
 import AppointmentForm from "./AppointmentForm";
 import { brand } from "@/lib/brand";
 
-export const metadata = { title: "Book a Consultation" };
+export const metadata = {
+  title: "Schedule a Free Consultation",
+  description:
+    "Pick a time to talk with a licensed EveryHealth advisor by phone, video, or in person. We compare plans, check your doctors, and help you enroll.",
+};
 
 export default function AppointmentPage() {
   return (
@@ -11,10 +15,10 @@ export default function AppointmentPage() {
         {/* EveryHealth Custom Page Header */}
         <div className="eh-page-header text-center">
           <div className="container">
-            <span className="subtitle-badge">No Cost Guidance</span>
-            <h1>Book a Free Consultation</h1>
+            <span className="subtitle-badge">Free and No Obligation</span>
+            <h1>Schedule Time With an Advisor</h1>
             <p>
-              Schedule time with a licensed EveryHealth specialist to compare insurance options, review doctor networks, and get help with enrollment or renewals.
+              Choose a time to meet with a licensed EveryHealth advisor. We will compare your options, confirm your doctors are covered, and help you enroll or renew.
             </p>
           </div>
           <div className="eh-breadcrumbs mt-4">
@@ -22,7 +26,7 @@ export default function AppointmentPage() {
               <ol className="justify-content-center">
                 <li><Link href="/">Home</Link></li>
                 <li className="ms-2 me-2">/</li>
-                <li className="current">Book Consultation</li>
+                <li className="current">Appointment</li>
               </ol>
             </div>
           </div>

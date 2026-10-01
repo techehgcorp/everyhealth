@@ -16,14 +16,14 @@ const PAGE_URL = `${SITE_URL}/guides/medicare-advantage-to-medigap`;
 // those change. Re-verify state specifics before writing about any one state.
 
 export const metadata = {
-  title: "Switching From Medicare Advantage to Medigap",
+  title: "Can You Move From Medicare Advantage to Medigap?",
   description:
-    "Why moving from Medicare Advantage to a Medigap policy is harder than moving the other way, when you have a guaranteed right to switch, and what medical underwriting actually means.",
+    "Why getting a Medigap policy after Medicare Advantage is harder than changing Advantage plans, when the law guarantees your right to switch, and what medical underwriting involves.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: `Switching From Medicare Advantage to Medigap | ${brand.name}`,
+    title: `Can You Move From Medicare Advantage to Medigap? | ${brand.name}`,
     description:
-      "The one-way door in Medicare that most people do not know about until they need it.",
+      "The Medicare rule that is easy to miss at 65 and hard to undo later.",
     url: PAGE_URL,
     type: "article",
   },
@@ -33,29 +33,29 @@ const switchDirection = {
   columns: ["", "Advantage to Advantage", "Advantage to Medigap"],
   rows: [
     [
-      "When you can do it",
-      "Every autumn during Annual Enrollment, plus a one-time switch each January to March",
-      "You can leave Advantage in those same windows, but buying the Medigap policy is a separate step with its own rules",
+      "When you can switch",
+      "Each fall during Annual Enrollment, plus one change between January and March",
+      "You can leave Advantage during those same periods, but getting a Medigap policy is a separate step with separate rules",
     ],
     [
-      "Health questions",
-      "None, ever",
-      "In most states, yes, unless a guaranteed issue right applies",
+      "Asked about your health",
+      "Never",
+      "Yes in most states, unless you have a guaranteed issue right",
     ],
     [
-      "Can you be declined",
+      "Could you be turned down",
       "No",
-      "Yes, outside a guaranteed issue right, in most states",
+      "Yes in most states, unless you have a guaranteed issue right",
     ],
     [
-      "Can you be charged more for your health",
+      "Could your health raise the price",
       "No",
-      "Yes, outside a guaranteed issue right, in most states",
+      "Yes in most states, unless you have a guaranteed issue right",
     ],
     [
-      "Drug coverage",
-      "Usually part of the plan",
-      "Needs a separate Part D plan, enrolled during a valid window",
+      "Prescription coverage",
+      "Typically built into the plan",
+      "Requires a separate Part D plan, signed up for during an allowed window",
     ],
   ],
 };
@@ -64,9 +64,9 @@ export default function AdvantageToMedigapGuide() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Switching From Medicare Advantage to Medigap",
+    headline: "Can You Move From Medicare Advantage to Medigap?",
     description:
-      "Why moving from Medicare Advantage to a Medigap policy is harder than moving the other way, and when you have a guaranteed right to do it.",
+      "Why getting a Medigap policy after Medicare Advantage is harder than changing Advantage plans, and when the law guarantees your right to switch.",
     mainEntityOfPage: { "@type": "WebPage", "@id": PAGE_URL },
     author: { "@type": "Organization", name: brand.name, url: SITE_URL },
     publisher: {
@@ -105,10 +105,10 @@ export default function AdvantageToMedigapGuide() {
 
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Medicare Guide</span>
-          <h1>Switching From Medicare Advantage to Medigap</h1>
+          <span className="subtitle-badge">Understanding Medicare</span>
+          <h1>Can You Move From Medicare Advantage to Medigap?</h1>
           <p>
-            Moving between Advantage plans is easy every year of your life. Moving to a Medigap policy usually is not, and the reason catches people out.
+            You can change Advantage plans every year with no questions asked. Getting a Medigap policy later is a different story, and many people do not find out until they try.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -130,152 +130,149 @@ export default function AdvantageToMedigapGuide() {
             <div className="col-lg-10 mx-auto">
               <div className="eh-content-block qol-content-block">
                 <p className="eh-lead qol-lead">
-                  Medicare is built so you can change your Medicare Advantage plan every
-                  autumn, for any reason, for the rest of your life, and your health never
-                  comes into it. Buying a Medigap policy works under a different set of
-                  rules, and after one specific window closes, insurers in most states are
-                  allowed to ask about your health and say no.
+                  Under Medicare&apos;s rules, you can switch Medicare Advantage plans every fall,
+                  for whatever reason you like, for as long as you live, and no one asks
+                  about your health. Medigap plays by different rules. Once one particular
+                  window has passed, insurers in most states can ask health questions and
+                  turn you down.
                 </p>
                 <p>
-                  Nobody hides this. It is simply not the part of the conversation that
-                  comes up when you are 65, healthy, and looking at a plan with a low
-                  premium and dental coverage attached. It becomes the whole conversation
-                  about a decade later.
+                  This is not a secret. It just rarely comes up when you are 65, feeling
+                  well, and comparing plans with low premiums and built-in dental benefits.
+                  Ten years later, it can be the only thing that matters.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>The window most people spend without noticing</h2>
+                <h2>The six months many people let slip by</h2>
                 <p>
-                  Your Medigap open enrollment period runs six months, starting the first
-                  month you are both 65 or older and enrolled in Part B. It happens once.
-                  There is no repeat, no annual version, and no way to reopen it.
+                  Your Medigap open enrollment period lasts six months and begins the first
+                  month you are both 65 or older and signed up for Part B. You get it only
+                  once. It does not come back each year, and it cannot be reopened.
                 </p>
                 <p>
-                  During those six months you can buy any Medigap policy sold in your state
-                  at that insurer&apos;s standard rate, regardless of your health history.
-                  No questions, no exam, no exclusions for conditions you already have.
+                  For those six months, you can buy any Medigap policy offered in your state
+                  at the insurer&apos;s standard price, no matter your health history. There
+                  are no health questions, no exam, and no exclusions for existing conditions.
                 </p>
                 <p>
-                  After it closes, that protection ends. In most states an insurer reviewing
-                  a later Medigap application may look at your health history and decide to
-                  charge you a higher rate, exclude a pre-existing condition for a period,
-                  or decline the application entirely. That is medical underwriting, and it
-                  is legal and routine.
+                  Once the six months are over, so is that protection. In most states, an
+                  insurer looking at a later Medigap application can review your health
+                  history and charge you more, leave out coverage for a pre-existing
+                  condition for a while, or reject you altogether. This is called medical
+                  underwriting, and it is both legal and common.
                 </p>
               </div>
 
               <ComparisonTable
-                heading="Why direction matters"
-                intro="The same person, the same year, moving in two different directions gets treated completely differently."
+                heading="Same person, two very different outcomes"
+                intro="Switching between Advantage plans and switching to Medigap follow completely different rules, even for the same person in the same year."
                 columns={switchDirection.columns}
                 rows={switchDirection.rows}
-                note="State law varies. Several states provide Medigap rights beyond the federal minimum, including annual or continuous guaranteed issue. Confirm the rules where you live before relying on the general position."
+                note="Rules differ by state. Some states give Medigap rights beyond the federal baseline, including yearly or year-round guaranteed issue. Check your own state's rules before counting on the general picture."
               />
 
               <div className="eh-content-block qol-content-block">
-                <h2>When you do have a guaranteed right</h2>
+                <h2>Situations where your right to switch is guaranteed</h2>
                 <p>
-                  Federal law provides guaranteed issue rights in a limited set of
-                  situations. Where one applies, an insurer must sell you certain Medigap
-                  policies, cannot use your health against you, and cannot exclude a
-                  pre-existing condition. The common ones are worth knowing by name.
+                  Federal law gives you guaranteed issue rights in a handful of situations.
+                  When one of them applies, insurers must offer you certain Medigap policies,
+                  cannot hold your health against you, and cannot exclude a pre-existing
+                  condition. These are the ones that come up most.
                 </p>
                 <ul className="eh-bullets qol-bullets">
                   <li>
-                    <strong>The trial right at 65</strong>
+                    <strong>Trying Advantage at 65</strong>
                     <span>
-                      If you joined a Medicare Advantage plan when you first became
-                      eligible at 65 and you leave within the first twelve months, you have
-                      a guaranteed right to buy a Medigap policy.
+                      If you enrolled in a Medicare Advantage plan as soon as you became
+                      eligible at 65 and leave it within the first twelve months, you are
+                      guaranteed the right to buy a Medigap policy.
                     </span>
                   </li>
                   <li>
-                    <strong>The trial right after dropping Medigap</strong>
+                    <strong>Trying Advantage after leaving Medigap</strong>
                     <span>
-                      If you had a Medigap policy, dropped it to try Medicare Advantage for
-                      the first time, and change your mind within twelve months, you can
-                      generally return to a Medigap policy.
+                      If you gave up a Medigap policy to try Medicare Advantage for the
+                      first time and decide within twelve months that it is not for you,
+                      you can usually go back to a Medigap policy.
                     </span>
                   </li>
                   <li>
-                    <strong>Your plan leaves or you move</strong>
+                    <strong>Your plan pulls out or you relocate</strong>
                     <span>
-                      If your Medicare Advantage plan stops serving your area, ends its
-                      contract, or you move outside its service area, a guaranteed issue
-                      right generally applies.
+                      If your Medicare Advantage plan leaves your area, ends its contract,
+                      or you move out of the area it serves, you usually get a guaranteed
+                      issue right.
                     </span>
                   </li>
                   <li>
-                    <strong>The plan broke its rules</strong>
+                    <strong>Your plan did not play fair</strong>
                     <span>
-                      If a plan misled you or failed to follow its own terms, that can
-                      trigger a guaranteed issue right as well.
+                      If a plan misled you or did not follow its own rules, you may also
+                      qualify for a guaranteed issue right.
                     </span>
                   </li>
                 </ul>
                 <p>
-                  These rights are time-limited, usually to about sixty days around the
-                  triggering event, and they need to be claimed rather than granted
-                  automatically. Missing the deadline puts you back into underwriting.
+                  These rights expire, typically about sixty days around the event that
+                  triggered them, and you have to use them; they are not applied for you.
+                  If you miss the deadline, you are back to medical underwriting.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>What underwriting actually asks</h2>
+                <h2>What medical underwriting looks at</h2>
                 <p>
-                  A Medigap application outside a protected window is not a formality. The
-                  insurer asks about hospital stays and surgery in recent years, ongoing
-                  treatment, and a list of specific conditions. Some are what people expect,
-                  such as active cancer treatment or dialysis. Others surprise them: a
-                  recent joint replacement recommendation, a condition that is well managed
-                  but chronic, or a medication that signals something the insurer prices
-                  for.
+                  Applying for Medigap outside a protected window is a real review, not a
+                  rubber stamp. Insurers ask about recent hospital stays and surgeries,
+                  current treatment, and a list of specific conditions. Some questions are
+                  expected, like whether you are being treated for cancer or on dialysis.
+                  Others catch people off guard: a doctor suggesting a joint replacement, a
+                  chronic condition that is well controlled, or a prescription that points
+                  to something the insurer factors into its price.
                 </p>
                 <p>
-                  Different insurers weigh the same history differently, so being declined
-                  by one does not mean being declined by all. That is genuinely where a
-                  broker earns their keep, because knowing which carriers view a specific
-                  condition more favourably is not information you can look up. But no
-                  broker can turn a decline into an approval, which is why the timing
-                  matters far more than the shopping.
+                  Each insurer judges the same health history in its own way, so a decline
+                  from one company does not mean every company will say no. This is where a
+                  broker really helps, because which carriers are more lenient about a
+                  given condition is not something you can find online. Still, no broker can
+                  reverse a decline, which is why getting the timing right matters much more
+                  than shopping around.
                 </p>
               </div>
 
               <div className="eh-content-block qol-content-block">
-                <h2>What this does not mean</h2>
+                <h2>This is not a case against Medicare Advantage</h2>
                 <p>
-                  It does not mean Medicare Advantage is the wrong choice. For a great many
-                  people it is the right one: the costs are lower up front, the network
-                  covers the doctors they use, and the extra benefits are real. Millions of
-                  people are well served by it, and switching to Medigap later is something
-                  most of them never want to do.
+                  For many people, Medicare Advantage is a great fit: lower upfront costs, a
+                  network that includes their doctors, and extra benefits they actually use.
+                  Millions of people are happy with it, and most never feel the need to move
+                  to Medigap.
                 </p>
                 <p>
-                  What it means is that the decision at 65 is not symmetric with the
-                  decision at 75, and it should be made knowing that. If the network works
-                  for you and the budget matters more than nationwide access, Advantage is
-                  a sound choice. If you travel constantly, split the year between states,
-                  or expect complex care where you do not want prior authorisation standing
-                  between you and a specialist, the six-month window is the moment to act on
-                  that, not later.
+                  The point is that choosing at 65 is not the same as choosing at 75, and it
+                  helps to decide with that in mind. If the network fits and keeping costs
+                  down matters more to you than nationwide access, Advantage makes sense. If
+                  you travel a lot, live in two states during the year, or expect complex care
+                  and do not want prior authorization between you and a specialist, use your
+                  six-month window to act on it rather than waiting.
                 </p>
                 <p className="eh-inline-link qol-inline-link">
                   <Link href="/products/medicare">
-                    Compare how Medicare Advantage and Medigap work
+                    See how Medicare Advantage and Medigap compare
                   </Link>
                 </p>
               </div>
 
               <div className="eh-guide-cta qol-guide-cta">
-                <h2>Not sure which window you are in?</h2>
+                <h2>Not sure where you stand?</h2>
                 <p>
-                  A licensed EveryHealth agent can tell you whether your Medigap window is open,
-                  whether a guaranteed issue right applies to your situation, and what your
-                  options look like either way.
+                  A licensed EveryHealth agent can check whether your Medigap window is still
+                  open, whether you have a guaranteed issue right, and what choices you have
+                  in either case.
                 </p>
                 <Link href="/appointment" className="btn-action">
-                  Talk to an agent
+                  Speak with an agent
                 </Link>
               </div>
 

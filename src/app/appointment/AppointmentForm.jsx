@@ -155,7 +155,7 @@ export default function AppointmentForm() {
         <img src={brand.logo} alt="" />
         <div>
           <span>Step {currentStep + 1}</span>
-          <h2>{currentStep === 0 ? "Select a Date & Time" : "Interview Details"}</h2>
+          <h2>{currentStep === 0 ? "Pick a Day and Time" : "Your Details"}</h2>
           <p>
             {currentStep === 0
               ? "Choose a consultation time with a licensed EveryHealth advisor."
@@ -173,13 +173,13 @@ export default function AppointmentForm() {
           <>
             <div className="appointment-scheduler__summary">
               <img src={brand.logo} alt="" />
-              <h3>Interview Schedule</h3>
+              <h3>Free Coverage Consultation</h3>
               <p>
                 <i className="bi bi-telephone-fill" /> 30 min
               </p>
               <span>
-                Please select a time slot for your initial interview. This meeting can be conducted
-                by phone, video call, or in person, based on your preference.
+                Choose a time that works for you. We can meet by phone, video, or in person,
+                whichever you prefer.
               </span>
             </div>
 
@@ -219,7 +219,7 @@ export default function AppointmentForm() {
           <>
             <div className="appointment-scheduler__summary">
               <img src="/assets/img/Logo.png" alt="" />
-              <h3>Personal Detail</h3>
+              <h3>About You</h3>
               <p>
                 <i className="bi bi-telephone-fill" /> 30 min
               </p>

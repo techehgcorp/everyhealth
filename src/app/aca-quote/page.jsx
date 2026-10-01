@@ -2,14 +2,14 @@ import AcaQuoter from "@/components/AcaQuoter";
 import { brand } from "@/lib/brand";
 
 export const metadata = {
-  title: "ACA Marketplace Plans and Prices",
+  title: "Compare ACA Plans and Prices",
   description:
-    "See every on-exchange ACA health plan available in your county, with an estimate of the savings you may qualify for. No account, no phone number required to look.",
+    "Browse all on-exchange ACA health plans in your county and estimate the savings you could get. No account or phone number needed to browse.",
   alternates: { canonical: "/aca-quote" },
   openGraph: {
-    title: `ACA Marketplace Plans and Prices | ${brand.name}`,
+    title: `Compare ACA Plans and Prices | ${brand.name}`,
     description:
-      "Compare on-exchange ACA health plans in your county and estimate your monthly cost after savings.",
+      "Browse on-exchange ACA health plans where you live and see an estimate of your monthly premium after savings.",
     url: "/aca-quote",
   },
 };
@@ -26,10 +26,10 @@ export default async function AcaQuotePage({ searchParams }) {
     <main className="main">
       <section className="section">
         <div className="container section-title">
-          <h2>See ACA Plans and Prices in Your County</h2>
+          <h2>Compare ACA Plans Where You Live</h2>
           <p>
-            Every on-exchange medical plan available where you live, with an estimate of what
-            you would actually pay after savings. Looking is free and takes about a minute.
+            Browse every on-exchange health plan in your county and see an estimate of your real
+            monthly cost once savings are applied. It is free and only takes about a minute.
           </p>
         </div>
 

@@ -1,7 +1,11 @@
 import Link from "next/link";
 import JobApplicationForm from "./JobApplicationForm";
 
-export const metadata = { title: "Careers at EveryHealth" };
+export const metadata = {
+  title: "Careers",
+  description:
+    "EveryHealth is hiring licensed insurance agents and support specialists. Apply online for the upcoming enrollment season.",
+};
 
 export default function CareersPage() {
   return (
@@ -10,10 +14,10 @@ export default function CareersPage() {
         {/* EveryHealth Custom Page Header */}
         <div className="eh-page-header text-center">
           <div className="container">
-            <span className="subtitle-badge">Join Our Team</span>
-            <h1>Careers at EveryHealth</h1>
+            <span className="subtitle-badge">We Are Hiring</span>
+            <h1>Build Your Career With Us</h1>
             <p>
-              We are looking for dedicated, client-first licensed agents and support specialists passionate about making insurance clear and accessible.
+              We want licensed agents and support specialists who put clients first and love making insurance easy to understand.
             </p>
           </div>
           <div className="eh-breadcrumbs mt-4">

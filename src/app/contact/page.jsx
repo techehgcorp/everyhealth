@@ -2,7 +2,11 @@ import Link from "next/link";
 import ContactForm from "./ContactForm";
 import { brand } from "@/lib/brand";
 
-export const metadata = { title: "Contact Us" };
+export const metadata = {
+  title: "Contact Us",
+  description:
+    "Reach a licensed EveryHealth advisor by phone, email, or message for help with plans, enrollment, doctor networks, and renewals.",
+};
 
 export default function ContactPage() {
   return (
@@ -11,10 +15,10 @@ export default function ContactPage() {
         {/* Custom EveryHealth Page Header */}
         <div className="eh-page-header text-center">
           <div className="container">
-            <span className="subtitle-badge">Get In Touch</span>
-            <h1>Contact EveryHealth</h1>
+            <span className="subtitle-badge">We Are Here to Help</span>
+            <h1>Talk With Our Team</h1>
             <p>
-              Reach our licensed support team for enrollment guidance, plan questions, provider network checks, or benefit consultations.
+              Call, email, or send a message. Our licensed team can help with enrollment, plan questions, checking your doctors, or reviewing your benefits.
             </p>
           </div>
           <div className="eh-breadcrumbs mt-4">
@@ -35,10 +39,10 @@ export default function ContactPage() {
               <div className="col-lg-10">
                 <div className="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-5">
                   <div className="text-center max-width-700 mx-auto mb-4">
-                    <span className="subtitle-badge">Direct Message</span>
-                    <h2 className="fw-bold mb-2" style={{ color: "#1A3A6B" }}>Send Us a Message</h2>
+                    <span className="subtitle-badge">Write to Us</span>
+                    <h2 className="fw-bold mb-2" style={{ color: "#1A3A6B" }}>Drop Us a Note</h2>
                     <p className="text-muted mb-0">
-                      Have questions about plans, pricing, or subsidies? Complete the form below and an advisor will assist you.
+                      Wondering about plans, prices, or savings? Fill out the form and an advisor will get back to you.
                     </p>
                   </div>
                   <ContactForm />
@@ -54,7 +58,7 @@ export default function ContactPage() {
                     <i className="bi bi-telephone-fill" />
                   </div>
                   <div className="contact-tile__info">
-                    <h4>Call Advisors</h4>
+                    <h4>Call an Advisor</h4>
                     <p><a href={`tel:${brand.phoneHref}`} className="fw-bold text-dark">{brand.phoneDisplay}</a></p>
                     <small className="text-muted">Mon - Fri: 9am - 6pm EST</small>
                   </div>
@@ -67,9 +71,9 @@ export default function ContactPage() {
                     <i className="bi bi-envelope-fill" />
                   </div>
                   <div className="contact-tile__info">
-                    <h4>Email Support</h4>
+                    <h4>Send an Email</h4>
                     <p><a href={`mailto:${brand.email}`} className="fw-bold text-dark">{brand.email}</a></p>
-                    <small className="text-muted">24-hour response</small>
+                    <small className="text-muted">Reply within 24 hours</small>
                   </div>
                 </div>
               </div>
@@ -80,7 +84,7 @@ export default function ContactPage() {
                     <i className="bi bi-clock-fill" />
                   </div>
                   <div className="contact-tile__info">
-                    <h4>Operation Hours</h4>
+                    <h4>Office Hours</h4>
                     <p className="fw-bold text-dark">Sun - Fri: 9am - 6pm</p>
                     <small className="text-muted">Saturday: Closed</small>
                   </div>
@@ -94,7 +98,7 @@ export default function ContactPage() {
                       <i className="bi bi-geo-alt-fill" />
                     </div>
                     <div className="contact-tile__info">
-                      <h4>Headquarters</h4>
+                      <h4>Our Office</h4>
                       <p className="fw-bold text-dark">
                         {[
                           brand.address.streetAddress,

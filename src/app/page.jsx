@@ -2,6 +2,79 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import { brand } from "@/lib/brand";
 import { publishedGuides, guideHref } from "@/data/guides";
+import { publishedGeneralFaqs } from "@/data/faqs";
+
+// The self-enrollment portal section is switched off for now. Flip back
+// to true to show the Ameritas / OneShare / NCD cards again.
+const SHOW_SELF_ENROLLMENT = false;
+
+// The old "EveryHealth Advantage" block (text + photo) is replaced by the
+// real-help cards below. Flip back to true to bring it back.
+const SHOW_ADVANTAGE = false;
+
+// Common worries people bring to us, each paired with how we help.
+const realHelpItems = [
+  {
+    icon: "bi-question-circle",
+    worry: "\u201cI don\u2019t know if I qualify for help paying.\u201d",
+    help: "We check your household and income against ACA subsidy rules, so you see what you\u2019d actually pay before you choose.",
+    href: "/products/aca-marketplace-plans",
+    cta: "ACA plans",
+  },
+  {
+    icon: "bi-hospital",
+    worry: "\u201cWill I be able to keep my doctor?\u201d",
+    help: "Before you enroll, we look up your doctors and hospitals in each plan\u2019s network so there are no surprises later.",
+    href: "/products/health-insurance",
+    cta: "Health insurance",
+  },
+  {
+    icon: "bi-calendar-event",
+    worry: "\u201cI\u2019m turning 65 and Medicare is confusing.\u201d",
+    help: "We walk through Parts A, B, C and D, Medigap, and your enrollment window in plain language, one step at a time.",
+    href: "/products/medicare",
+    cta: "Medicare",
+  },
+  {
+    icon: "bi-briefcase",
+    worry: "\u201cI just lost the coverage from my job.\u201d",
+    help: "Losing job coverage usually opens a Special Enrollment Period. We help you act on it before the window closes.",
+    href: "/faq",
+    cta: "Enrollment FAQ",
+  },
+];
+
+// The guide cards block is replaced by the FAQ accordion below (the
+// accordion links to /guides instead). Flip back to true to restore it.
+const SHOW_GUIDES = false;
+
+// Home page picks from the general FAQs, in this order. Answers stay in
+// src/data/faqs.js so this can never drift from /faq.
+const homeFaqIds = [
+  "agent-fee",
+  "enrollment-scope",
+  "independent-broker",
+  "what-to-compare",
+  "plan-types",
+];
+const homeFaqs = homeFaqIds
+  .map((id) => publishedGeneralFaqs.find((faq) => faq.id === id))
+  .filter(Boolean);
+
+const howItWorksSteps = [
+  {
+    title: "Tell Us About You",
+    text: "Call, book a time, or request a quote. Share your ZIP code, who needs coverage, and the doctors and prescriptions you want to keep.",
+  },
+  {
+    title: "We Compare Your Options",
+    text: "A licensed advisor lines up plans side by side, checking premiums, subsidies, provider networks, and drug coverage.",
+  },
+  {
+    title: "You Choose and Enroll",
+    text: "Pick the plan that fits and we help you through enrollment, then stay available when questions come up later.",
+  },
+];
 
 export default function HomePage() {
   const featuredGuides = publishedGuides.slice(0, 3);
@@ -153,7 +226,65 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 3. The EveryHealth Advantage (Interactive Features & Trust) */}
+        {/* 3b. How It Works — photo beside a three-step timeline */}
+        <section id="how-it-works" className="how-it-works section">
+          <div className="container">
+            <div className="row align-items-center g-5">
+              <div className="col-lg-6" data-aos="fade-right" data-aos-delay={100}>
+                <div className="how-it-works__media">
+                  <picture>
+                    <source srcSet="/assets/img/health/consultation-4.png" type="image/webp" />
+                    <img
+                      src="/assets/img/health/consultation-4.png"
+                      alt="An EveryHealth advisor reviewing plan options with a client"
+                      className="img-fluid"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <div className="how-it-works__badge">
+                    <i className="bi bi-person-check-fill" aria-hidden="true" />
+                    <div>
+                      <strong>Licensed Advisors</strong>
+                      <span>No cost for our guidance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-6" data-aos="fade-left" data-aos-delay={200}>
+                <span className="subtitle-badge">How It Works</span>
+                <h2 className="how-it-works__title">Getting Covered in Three Simple Steps</h2>
+                <p className="how-it-works__lead">
+                  No jargon and no pressure. A licensed advisor does the comparing so you can make the call.
+                </p>
+
+                <ol className="how-steps">
+                  {howItWorksSteps.map((step, index) => (
+                    <li key={step.title} className="how-step">
+                      <span className="how-step__num" aria-hidden="true">{index + 1}</span>
+                      <div>
+                        <h3>{step.title}</h3>
+                        <p>{step.text}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+
+                <div className="how-it-works__cta">
+                  <a href="#quote" className="btn btn-primary" data-quote-modal-trigger>
+                    Get a Free Quote
+                  </a>
+                  <Link href="/appointment" className="how-it-works__link">
+                    Or book a free call <i className="bi bi-arrow-right" aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 3a. The EveryHealth Advantage (Interactive Features & Trust) */}
+        {SHOW_ADVANTAGE && (
         <section id="everyhealth-advantage" className="everyhealth-advantage section">
           <div className="container" data-aos="fade-up">
             <div className="row align-items-center g-5">
@@ -229,8 +360,49 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        )}
+
+        {/* 3. Real Help — common worries and how we handle them */}
+        <section id="real-help" className="real-help section">
+          <div className="container section-title" data-aos="fade-up">
+            <span className="subtitle-badge">Real Help</span>
+            <h2>The Questions People Bring Us Every Day</h2>
+            <p>
+              If any of these sound familiar, you&apos;re in the right place. Here&apos;s how a licensed advisor helps.
+            </p>
+          </div>
+
+          <div className="container">
+            <div className="row g-4">
+              {realHelpItems.map((item, index) => (
+                <div
+                  key={item.href}
+                  className="col-lg-3 col-md-6"
+                  data-aos="fade-up"
+                  data-aos-delay={150 + index * 80}
+                >
+                  <div className="real-help-card">
+                    <div className="real-help-card__icon">
+                      <i className={`bi ${item.icon}`} aria-hidden="true" />
+                    </div>
+                    <h3>{item.worry}</h3>
+                    <p>{item.help}</p>
+                    <Link href={item.href} className="real-help-card__link">
+                      {item.cta} <i className="bi bi-arrow-right" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        
+
+        
 
         {/* 4. Instant Direct Self-Enrollment Portal */}
+        {SHOW_SELF_ENROLLMENT && (
         <section id="self-enrollment-portal" className="self-enrollment-portal section">
           <div className="container" data-aos="fade-up">
             <div className="portal-header text-center">
@@ -298,8 +470,55 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        )}
 
-        {/* 5. Knowledge & Guides Center */}
+        {/* 5. FAQ — accordion beside a short intro and contact prompt */}
+        <section id="home-faq" className="home-faq section">
+          <div className="container">
+            <div className="row g-5">
+              <div className="col-lg-5" data-aos="fade-right" data-aos-delay={100}>
+                <div className="home-faq__intro">
+                  <span className="subtitle-badge">FAQ</span>
+                  <h2>Questions We Hear Most</h2>
+                  <p>
+                    Straight answers to what people ask before they enroll. Don&apos;t see yours? A licensed advisor is a call away.
+                  </p>
+
+                  <a href={`tel:${brand.phoneHref}`} className="home-faq__phone">
+                    <i className="bi bi-telephone-fill" aria-hidden="true" />
+                    {brand.phoneDisplay}
+                  </a>
+
+                  <div className="home-faq__links">
+                    <Link href="/faq">
+                      See all FAQs <i className="bi bi-arrow-right" aria-hidden="true" />
+                    </Link>
+                    <Link href="/guides">
+                      Browse our guides <i className="bi bi-arrow-right" aria-hidden="true" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-7" data-aos="fade-left" data-aos-delay={200}>
+                <div className="home-faq__list">
+                  {homeFaqs.map((faq, index) => (
+                    <details key={faq.id} className="home-faq__item" open={index === 0}>
+                      <summary>
+                        {faq.q}
+                        <i className="bi bi-plus-lg" aria-hidden="true" />
+                      </summary>
+                      <p>{faq.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5a. Knowledge & Guides Center */}
+        {SHOW_GUIDES && (
         <section id="knowledge-hub" className="knowledge-hub section">
           <div className="container" data-aos="fade-up">
             <div className="row align-items-end mb-4">
@@ -333,6 +552,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* 6. Closing High-Conversion CTA Banner */}
         <section id="closing-cta" className="closing-cta section">

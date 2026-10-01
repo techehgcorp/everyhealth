@@ -7,67 +7,67 @@ const PAGE_URL = `${SITE_URL}/products/indexed-universal-life`;
 export const metadata = {
   title: "Indexed Universal Life (IUL)",
   description:
-    "Learn how Indexed Universal Life can combine life insurance protection, cash value potential, living benefits, and legacy planning.",
+    "See how Indexed Universal Life pairs lifelong protection with cash value that can grow, living benefit riders, and options for leaving a legacy.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: `Indexed Universal Life (IUL) | ${brand.name}`,
     description:
-      "How Indexed Universal Life combines life insurance protection, cash value potential, living benefits, and legacy planning.",
+      "How Indexed Universal Life pairs lifelong protection with cash value that can grow, living benefit riders, and legacy options.",
     url: PAGE_URL,
     type: "article",
-    images: [{ url: "/assets/img/health/indexed-universal-life-insurance.jpg" }],
+    images: [{ url: "/assets/img/pages/indexed-universal-life.webp" }],
   },
 };
 
 const highlights = [
   {
     icon: "bi-shield-check",
-    title: "Life Insurance Protection",
-    text: "IUL is permanent life insurance built first around a death benefit for the people, business, or cause you want to protect.",
+    title: "Lifelong Protection",
+    text: "At its core, IUL is permanent life insurance: a death benefit for the family, business, or cause you want to look after.",
   },
   {
     icon: "bi-graph-up-arrow",
-    title: "Cash Value Potential",
-    text: "Premiums may help build cash value over time, with interest credits tied to an index strategy rather than direct stock market ownership.",
+    title: "Room for Cash Value to Grow",
+    text: "Part of what you pay can build cash value over the years, credited based on a market index without you owning any stocks directly.",
   },
   {
     icon: "bi-cash-coin",
-    title: "Flexible Access",
-    text: "Policy cash value may be accessed through loans or withdrawals for retirement income or other needs when the policy is managed properly.",
+    title: "Access When You Need It",
+    text: "With careful management, you may be able to draw on the cash value through loans or withdrawals for retirement income or other needs.",
   },
   {
     icon: "bi-heart-pulse",
-    title: "Living Benefits",
-    text: "Optional riders may let you accelerate part of the death benefit during life for qualifying terminal, chronic, or critical conditions.",
+    title: "Help While You Are Living",
+    text: "Optional riders can let you receive part of the death benefit early after a qualifying terminal, chronic, or critical diagnosis.",
   },
 ];
 
 const useCases = [
-  "Family protection with potential long-term cash value growth",
-  "Supplemental retirement income planning after other savings options",
-  "Legacy planning for children, spouses, businesses, or charitable causes",
-  "A safety net for qualifying health emergencies through living benefit riders",
+  "Protecting your family while building cash value over the long run",
+  "Adding a source of retirement income once other savings are in place",
+  "Leaving something behind for children, a spouse, a business, or a charity",
+  "A cushion for serious health events through living benefit riders",
 ];
 
 const cautions = [
-  "Policy loans and withdrawals reduce cash value and the death benefit.",
-  "If too much is taken out or the policy lapses, taxes and other consequences may apply.",
-  "Caps, participation rates, costs, riders, and guarantees vary by carrier and policy.",
-  "IUL is not a bank deposit, is not FDIC/NCUA insured, and may lose value.",
+  "Any loan or withdrawal lowers both the cash value and the death benefit.",
+  "Taking out too much, or letting the policy lapse, can trigger taxes and other consequences.",
+  "Caps, participation rates, fees, riders, and guarantees differ from carrier to carrier and policy to policy.",
+  "IUL is not a bank deposit, is not insured by the FDIC or NCUA, and can lose value.",
 ];
 
 const faqs = [
   {
-    q: "Is an IUL an investment?",
-    a: "No. It is life insurance. Interest credited to the cash value is tied to the performance of a market index, but you do not own shares or invest directly in the market. It should only be considered when there is a genuine need for life insurance protection.",
+    q: "Should I think of IUL as an investment?",
+    a: "No. First and foremost, it is life insurance. The interest credited to your cash value follows a market index, but you never own shares or put money directly into the market. It only makes sense if you actually need life insurance coverage.",
   },
   {
-    q: "How is IUL different from whole life insurance?",
-    a: "Both are permanent life insurance. Whole life generally offers fixed premiums and guaranteed cash value growth. IUL offers more flexibility in premium and death benefit, with cash value growth tied to an index strategy subject to caps, floors, and participation rates that vary by carrier.",
+    q: "How does IUL compare with whole life?",
+    a: "Both are permanent policies. Whole life usually comes with a fixed premium and guaranteed cash value growth. IUL lets you adjust the premium and death benefit more freely, and its cash value growth follows an index, limited by caps, floors, and participation rates that each carrier sets.",
   },
   {
-    q: "Can I access the cash value before I retire?",
-    a: "Cash value may be accessed through withdrawals and policy loans, subject to policy terms. Doing so reduces both the cash value and the death benefit, and mismanaging loans can cause a policy to lapse with tax consequences. This is a policy that needs ongoing review, not a set-and-forget product.",
+    q: "Can I use the cash value before retirement?",
+    a: "You may be able to, through withdrawals and policy loans, depending on the policy's terms. Either one lowers your cash value and death benefit, and poorly managed loans can make the policy lapse and create a tax bill. IUL needs regular check-ins; it is not something to set up and forget.",
   },
 ];
 
@@ -105,10 +105,10 @@ export default function IndexedUniversalLifePage() {
 
       <div className="eh-page-header text-center">
         <div className="container">
-          <span className="subtitle-badge">Life & Growth Solutions</span>
+          <span className="subtitle-badge">Protection and Growth</span>
           <h1>Indexed Universal Life (IUL)</h1>
           <p>
-            A guide to how IUL combines permanent life protection with cash value growth potential and living benefits.
+            How IUL brings together lifelong coverage, cash value that can grow, and benefits you can use while living.
           </p>
         </div>
         <div className="eh-breadcrumbs mt-4">
@@ -128,12 +128,12 @@ export default function IndexedUniversalLifePage() {
         <div className="container">
           <div className="row align-items-center gy-4">
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={100}>
-              <span className="iul-eyebrow">Life insurance with more flexibility</span>
-              <h2>Protection first, with room for future planning.</h2>
+              <span className="iul-eyebrow">Flexible permanent coverage</span>
+              <h2>Cover your family today, plan for tomorrow.</h2>
               <p>
-                Indexed Universal Life is permanent life insurance. It is designed to provide
-                a death benefit while also offering the potential to build cash value that can
-                be used later, depending on policy performance and how the policy is funded.
+                Indexed Universal Life is a type of permanent life insurance. Its first job is
+                to pay a death benefit, and it can also build cash value you may use down the
+                road, depending on how the policy performs and how much you put into it.
               </p>
               <div className="iul-actions">
                 <Link href="/appointment" className="iul-primary-btn">
@@ -147,8 +147,8 @@ export default function IndexedUniversalLifePage() {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={180}>
               <div className="iul-visual">
                 <img
-                  src="/assets/img/health/Life Insurance.png"
-                  alt="Family reviewing life insurance planning"
+                  src="/assets/img/pages/indexed-universal-life.webp"
+                  alt="Multigenerational family gathered on a sunny balcony"
                   className="img-fluid"
                 />
               </div>
@@ -160,8 +160,8 @@ export default function IndexedUniversalLifePage() {
       <section className="iul-highlights section">
         <div className="container">
           <div className="section-title text-center" data-aos="fade-up">
-            <h2>What IUL Can Help With</h2>
-            <p>One policy can support several goals, as long as the coverage is designed carefully.</p>
+            <h2>Where IUL Can Fit In</h2>
+            <p>A single well-built policy can serve more than one purpose.</p>
           </div>
           <div className="row gy-4">
             {highlights.map((item, index) => (
@@ -184,17 +184,17 @@ export default function IndexedUniversalLifePage() {
           <div className="row gy-4">
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={100}>
               <div className="iul-content-block">
-                <h2>How the Cash Value Conversation Works</h2>
+                <h2>Understanding Cash Value</h2>
                 <p>
-                  With permanent life insurance, part of the strategy may include building cash
-                  value tax-deferred. If the policy is structured and maintained correctly, that
-                  cash value may be accessed through withdrawals up to basis and policy loans
-                  thereafter, potentially without immediate income tax.
+                  Permanent life insurance can let cash value grow on a tax-deferred basis. When
+                  the policy is set up and kept up properly, you may be able to take withdrawals
+                  up to what you have paid in, then use policy loans after that, potentially
+                  without owing income tax right away.
                 </p>
                 <p>
-                  This is why IUL is sometimes discussed as a supplemental retirement strategy.
-                  It is not a replacement for proper retirement planning, and it should only be
-                  considered when there is a real need for life insurance protection.
+                  That is why some people use IUL as an extra source of retirement income. It
+                  does not take the place of a real retirement plan, and it only belongs in the
+                  conversation if you genuinely need life insurance coverage.
                 </p>
                 <ul className="iul-check-list">
                   {useCases.map((item) => (
@@ -208,20 +208,21 @@ export default function IndexedUniversalLifePage() {
             </div>
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay={160}>
               <div className="iul-content-block iul-accent-block">
-                <h2>Living Benefits and Legacy Options</h2>
+                <h2>Benefits for Your Lifetime and Beyond</h2>
                 <p>
-                  Living benefit riders may allow access to a portion of the death benefit during
-                  life if a qualifying terminal illness, chronic illness, critical illness, critical
-                  injury, Alzheimer&apos;s disease, or Lewy Body Dementia diagnosis occurs.
+                  With living benefit riders, you may be able to receive part of the death benefit
+                  while you are alive after a qualifying diagnosis of terminal illness, chronic
+                  illness, critical illness, critical injury, Alzheimer&apos;s disease, or Lewy Body
+                  Dementia.
                 </p>
                 <p>
-                  For legacy planning, a charitable matching gift rider may let a selected charity
-                  receive an additional matching benefit when the insured passes away, subject to
-                  the rider&apos;s limits and availability.
+                  If giving back matters to you, a charitable matching gift rider can send an extra
+                  matching amount to a charity you choose when the insured dies, within the limits
+                  of the rider and where it is offered.
                 </p>
                 <div className="iul-legacy-note">
-                  <strong>Simple idea:</strong> protect your family first, then design the policy
-                  around the future income, health, and legacy goals that matter most.
+                  <strong>The short version:</strong> take care of your family first, then shape
+                  the policy around the income, health, and legacy goals you care about most.
                 </div>
               </div>
             </div>
@@ -233,11 +234,12 @@ export default function IndexedUniversalLifePage() {
         <div className="container">
           <div className="iul-caution-panel" data-aos="fade-up">
             <div>
-              <span className="iul-eyebrow">Important to understand</span>
-              <h2>IUL needs active guidance.</h2>
+              <span className="iul-eyebrow">Read this first</span>
+              <h2>IUL works best with ongoing attention.</h2>
               <p>
-                It can be powerful, but it is not automatic. Premiums, policy charges, loan use,
-                rider availability, and carrier rules all affect whether the policy stays healthy.
+                It can do a lot, but it does not run itself. How much you pay in, policy fees, how
+                you use loans, which riders are available, and each carrier&apos;s rules all decide
+                whether the policy stays on track.
               </p>
             </div>
             <ul>
@@ -257,7 +259,7 @@ export default function IndexedUniversalLifePage() {
           <div className="row">
             <div className="col-lg-8 mx-auto text-center mb-5">
               <div className="service-header">
-                <h2>Common questions</h2>
+                <h2>Questions people ask about IUL</h2>
               </div>
             </div>
           </div>
@@ -279,19 +281,19 @@ export default function IndexedUniversalLifePage() {
       <section className="iul-cta section">
         <div className="container">
           <div className="iul-cta-inner" data-aos="fade-up">
-            <h2>Want to see if IUL fits your situation?</h2>
+            <h2>Is IUL right for you?</h2>
             <p>
-              A licensed EveryHealth agent can help compare policy options, explain the tradeoffs, and
-              review whether this strategy matches your protection and retirement goals.
+              Talk with a licensed EveryHealth agent. We will compare policies, lay out the pros and
+              cons, and help you decide whether IUL fits your protection and retirement plans.
             </p>
             <Link href="/appointment" className="iul-primary-btn">
               Book a Consultation
             </Link>
           </div>
           <p className="iul-disclaimer">
-            This page is for educational purposes only and is not tax, legal, investment, or
-            financial advice. Policy benefits, riders, guarantees, and availability vary by
-            state, carrier, and product. Consult qualified professionals before making decisions.
+            This information is educational only and should not be taken as tax, legal,
+            investment, or financial advice. Benefits, riders, guarantees, and availability differ
+            by state, carrier, and product. Talk with qualified professionals before you decide.
           </p>
         </div>
       </section>

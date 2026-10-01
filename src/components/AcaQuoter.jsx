@@ -362,9 +362,9 @@ export default function AcaQuoter({ initialZip = "" }) {
       <form onSubmit={handleSubmit} noValidate>
         {/* ---------- location ---------- */}
         <section className={styles.panel}>
-          <h2 className={styles.panelHeading}>Where you live</h2>
+          <h2 className={styles.panelHeading}>Your location</h2>
           <p className={styles.panelHint}>
-            Plans and prices are set county by county, so this decides what you can buy.
+            Each county has its own plans and prices, so this determines what is available to you.
           </p>
 
           <div className="row">
@@ -429,10 +429,10 @@ export default function AcaQuoter({ initialZip = "" }) {
 
         {/* ---------- household ---------- */}
         <section className={styles.panel}>
-          <h2 className={styles.panelHeading}>Who needs coverage</h2>
+          <h2 className={styles.panelHeading}>Who is being covered</h2>
           <p className={styles.panelHint}>
-            Age and tobacco use affect the price. Nobody needs to give a name or date of birth
-            to see prices.
+            Prices depend on age and tobacco use. You can see prices without sharing anyone&apos;s
+            name or birth date.
           </p>
 
           {applicants.map((person, index) => (
@@ -503,7 +503,7 @@ export default function AcaQuoter({ initialZip = "" }) {
 
           {applicants.length < 12 && (
             <button type="button" className={styles.textButton} onClick={addApplicant}>
-              + Add another person
+              + Add someone else
             </button>
           )}
         </section>
@@ -512,14 +512,14 @@ export default function AcaQuoter({ initialZip = "" }) {
         <section className={styles.panel}>
           <h2 className={styles.panelHeading}>Household income</h2>
           <p className={styles.panelHint}>
-            This is what decides whether you qualify for savings, and the difference is
-            usually large. Estimate your total household income for the coverage year.
+            Your income determines whether you get savings, and the savings are often
+            significant. Enter your best estimate of total household income for the coverage year.
           </p>
 
           <div className="row">
             <div className="col-md-4">
               <div className={styles.field}>
-                <label htmlFor="aca-income">Yearly household income</label>
+                <label htmlFor="aca-income">Estimated annual household income</label>
                 <input
                   id="aca-income"
                   type="number"
@@ -539,7 +539,7 @@ export default function AcaQuoter({ initialZip = "" }) {
 
             <div className="col-md-4">
               <div className={styles.field}>
-                <label htmlFor="aca-household-size">People in your tax household</label>
+                <label htmlFor="aca-household-size">Number of people in your tax household</label>
                 <select
                   id="aca-household-size"
                   value={householdSize}
@@ -560,7 +560,7 @@ export default function AcaQuoter({ initialZip = "" }) {
 
             <div className="col-md-4">
               <div className={styles.field}>
-                <label htmlFor="aca-effective-date">Coverage start date</label>
+                <label htmlFor="aca-effective-date">When coverage should begin</label>
                 <input
                   id="aca-effective-date"
                   type="date"
@@ -577,9 +577,9 @@ export default function AcaQuoter({ initialZip = "" }) {
 
           {showIncomeNudge && (
             <p className={styles.notice}>
-              Without an income, prices show at full cost. Most people who buy through the
-              Marketplace qualify for savings that bring the monthly premium down
-              substantially.
+              If you leave income blank, you will see full-price premiums. Most Marketplace
+              shoppers qualify for savings that lower their monthly premium by a meaningful
+              amount.
             </p>
           )}
         </section>
@@ -591,7 +591,7 @@ export default function AcaQuoter({ initialZip = "" }) {
         )}
 
         <button type="submit" className={styles.primaryButton} disabled={status === "loading"}>
-          {status === "loading" ? "Finding plans…" : "See plans and prices"}
+          {status === "loading" ? "Finding plans…" : "Show my plans and prices"}
         </button>
       </form>
 

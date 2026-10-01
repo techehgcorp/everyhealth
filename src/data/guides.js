@@ -11,10 +11,10 @@ export const guides = [
   {
     slug: "funeral-costs",
     published: true,
-    navLabel: "Funeral Costs",
-    title: "How Much Does a Funeral Cost?",
+    navLabel: "Funeral Price Guide",
+    title: "What Does a Funeral Really Cost?",
     summary:
-      "The national median, what the published figure leaves out, and an itemised look at where the money goes.",
+      "The typical national price, the costs that number does not include, and a line-by-line breakdown of where your money goes.",
     // Drives sitemap lastModified and tells the next dev when the figures
     // were last checked against the source study.
     updated: "2026-09-01",
@@ -23,30 +23,30 @@ export const guides = [
   {
     slug: "off-exchange-health-plans",
     published: true,
-    navLabel: "Off-Exchange Plans",
-    title: "Off-Exchange and Private Health Plans, Explained",
+    navLabel: "Plans Outside the Marketplace",
+    title: "A Guide to Off-Exchange and Private Health Plans",
     summary:
-      "What you give up and what you gain buying outside the Marketplace, plus an honest look at short-term, indemnity, and health sharing alternatives.",
+      "The pros and cons of buying coverage outside the Marketplace, and a candid look at short-term plans, indemnity plans, and health sharing.",
     updated: "2026-09-01",
     relatedProduct: "aca-marketplace-plans",
   },
   {
     slug: "medicare-advantage-to-medigap",
     published: true,
-    navLabel: "Advantage to Medigap",
-    title: "Switching From Medicare Advantage to Medigap",
+    navLabel: "Moving to Medigap",
+    title: "Can You Move From Medicare Advantage to Medigap?",
     summary:
-      "Why moving to a Medigap policy later is harder than moving between Advantage plans, and when you have a guaranteed right to do it.",
+      "Why getting a Medigap policy later is tougher than changing Advantage plans, and the situations where the law guarantees you can.",
     updated: "2026-09-01",
     relatedProduct: "medicare",
   },
   {
     slug: "how-much-life-insurance",
     published: true,
-    navLabel: "How Much Life Insurance",
-    title: "How Much Life Insurance Do You Actually Need?",
+    navLabel: "Sizing Your Life Insurance",
+    title: "Figuring Out How Much Life Insurance You Need",
     summary:
-      "What to add up, what to subtract, and how long the coverage needs to last — with a worked example.",
+      "What to count, what to take away, and how many years your coverage should last, with a step-by-step example.",
     updated: "2026-09-01",
     relatedProduct: "life-insurance",
   },
